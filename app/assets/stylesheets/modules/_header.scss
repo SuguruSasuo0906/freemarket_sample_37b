@@ -1,0 +1,164 @@
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1068px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.clearfix{
+  clear: both;
+}
+
+.header__inner{
+  @include mq(sm){
+    height: 90px;
+    width: 380px;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    border-style: solid;
+    border-width: 0;
+  }
+  @include mq(md){
+    height: 90px;
+    width: 700px;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    border-style: solid;
+    border-width: 0;
+  }
+  @include mq(lg) {
+    height: 90px;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    border-style: solid;
+    border-width: 0;
+  }
+  &__upper{
+    &__logo{
+      float: left;
+      .mercari_logo_horizontal{
+        zoom: 1.1;
+      }
+    }
+    &__form{
+      float: left;
+      position: relative;
+      width: calc(100% - (147px + 16px));
+      padding-left: 5px;
+      &__input{
+        height: 36px;
+        width: 100%;
+        padding: 9px 32px 9px 8px;
+        background: #fafafa;
+        font-size: 16px;
+        outline: 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      .icon-search{
+        color: gray;
+        display: inline;
+        height:36px;
+        line-height:38px;
+        position:absolute;
+        right:0px;
+        text-align:center;
+        top:0px;
+        width:36px;
+        z-index:1;
+      }
+    }
+  }
+  &__bottom{
+    &__l-left{
+      float: left;
+      padding-left: 7px;
+      .search-menu{
+        line-height: 46px;
+        font-size: 14px;
+        &__list{
+          display: inline-block;
+          &__text{
+            text-decoration: none;
+            color: #333;
+            height: 38px;
+            line-height: 32px;
+            -webkit-transition: all 0.1s ease;
+            -moz-transition: all 0.1s ease;
+            -o-transition: all 0.1s ease;
+            transition: all  0.1s ease;
+          }
+          &__text:hover{
+            color: #b3d4fc;
+          }
+        }
+        .brand{
+          margin-left: 6px;
+        }
+      }
+    }
+    &__l-right{
+      float: right;
+      height: 46px;
+      .personal-menu{
+        &__list{
+          display: inline-block;
+          margin-right:17px;
+          font-size: 14px;
+          line-height: 46px;
+          &__mypage-link{
+            text-decoration: none;
+            color: #333;
+            -webkit-transition: all 0.1s ease;
+            -moz-transition: all 0.1s ease;
+            -o-transition: all 0.1s ease;
+            transition: all  0.1s ease;
+            .mypage-avator{
+              vertical-align: middle;
+              margin-right: 10px;
+              border-radius: 16px;
+            }
+          }
+          &__mypage-link:hover{
+            color: #b3d4fc;
+          }
+          &__notification-link{
+            text-decoration: none;
+            color: #333;
+            -webkit-transition: all 0.1s ease;
+            -moz-transition: all 0.1s ease;
+            -o-transition: all 0.1s ease;
+            transition: all  0.1s ease;
+            .icon-bell{
+              margin-right: 5px;
+            }
+          }
+          &__notification-link:hover{
+            color: #b3d4fc;
+          }
+          &__todo-link{
+            text-decoration: none;
+            color: #333;
+            -webkit-transition: all 0.1s ease;
+            -moz-transition: all 0.1s ease;
+            -o-transition: all 0.1s ease;
+            transition: all  0.1s ease;
+            .icon-check{
+              margin-right: 5px;
+            }
+          }
+          &__todo-link:hover{
+            color: #b3d4fc;
+          }
+        }
+      }
+    }
+  }
+}
