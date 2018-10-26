@@ -3,7 +3,7 @@
     .header__inner__upper.clearfix
       %h1.header__inner__upper__logo
         %a{:href => ""}
-          =image_tag "mercari_logo_horizontal.png", alt: "mercari", height: "36", width: "134", class: "mercari_logo_horizontal"
+          =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2960600120", alt: "mercari", height: "36", width: "134", class: "mercari_logo_horizontal"
       %form.header__inner__upper__form{:action => "https://www.mercari.com/jp/search/"}
         %input.header__inner__upper__form__input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
         %i.fas.fa-search.icon-search
@@ -23,7 +23,7 @@
           %li.personal-menu__list.mypage
             %a.personal-menu__list__mypage-link{:href => ""}
               %div
-                =image_tag "member_photo.png", class: "mypage-avator", alt: "", width: "32"
+                =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", class: "mypage-avator", alt: "", width: "32"
                 %span マイページ
             #personal-menu__list__mypage-field
           %li.personal-menu__list.notification{"data-id" => "notification", "data-key" => "", "data-url" => ""}
