@@ -48,6 +48,10 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |introduction|string|null: false|
 |birthday|date|null: false|
 |address_id|integer|null: false|
@@ -60,16 +64,13 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
 |postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |street_number|string|null: false|
 |building|string|
 |telephone|integer|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
