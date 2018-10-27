@@ -19,21 +19,26 @@
               %a.search-menu__list__text{:href => ""} ブランドから探す
               #search-menu__list__brand-list
       .header__inner__bottom__l-right
-        %ul.personal-menu
-          %li.personal-menu__list.mypage
-            %a.personal-menu__list__mypage-link{:href => ""}
-              %div
-                =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", class: "mypage-avator", alt: "", width: "32"
-                %span マイページ
-            #personal-menu__list__mypage-field
-          %li.personal-menu__list.notification{"data-id" => "notification", "data-key" => "", "data-url" => ""}
-            %a.personal-menu__list__notification-link{"data-url" => "", :href => ""}
-              %i.far.fa-bell.icon
-              %span お知らせ
-              .personal-menu__list__notification-link__count
-            #personal-menu__list__notification-field{"data-id" => "personal-menu__list__notification-field"}
-          %li.personal-menu__list.todo{"data-id" => "todo", "data-key" => "", "data-url" => ""}
-            %a.personal-menu__list__todo-link{"data-url" => "", :href => ""}
-              %i.fa.fa-check.icon-check
-              %span やることリスト
-            #personal-menu__list__todo-field{"data-id" => "personal-menu__list__todo-field"}
+        - if user_signed_in?
+          %ul.personal-menu
+            %li.personal-menu__list.mypage
+              %a.personal-menu__list__mypage-link{:href => ""}
+                %div
+                  =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", class: "mypage-avator", alt: "", width: "32"
+                  %span マイページ
+              #personal-menu__list__mypage-field
+            %li.personal-menu__list.notification{"data-id" => "notification", "data-key" => "", "data-url" => ""}
+              %a.personal-menu__list__notification-link{"data-url" => "", :href => ""}
+                %i.far.fa-bell.icon
+                %span お知らせ
+                .personal-menu__list__notification-link__count
+              #personal-menu__list__notification-field{"data-id" => "personal-menu__list__notification-field"}
+            %li.personal-menu__list.todo{"data-id" => "todo", "data-key" => "", "data-url" => ""}
+              %a.personal-menu__list__todo-link{"data-url" => "", :href => ""}
+                %i.fa.fa-check.icon-check
+                %span やることリスト
+              #personal-menu__list__todo-field{"data-id" => "personal-menu__list__todo-field"}
+        - else
+          %ul.sign_menu
+            = link_to "ログイン", new_user_session_path, class: 'post'
+            = link_to "新規登録", new_user_registration_path, class: 'post'
