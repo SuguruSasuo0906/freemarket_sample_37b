@@ -61,7 +61,7 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 - has_many :deals, dependent: :destroy
 - has_one :address, dependent: :destroy
 
-##addressesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|string|null: false|
