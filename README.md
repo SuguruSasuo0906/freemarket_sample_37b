@@ -54,7 +54,6 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |first_name_kana|string|
 |introduction|string|
 |birthday|date|
-|address_id|integer|foreign_key: true|
 
 ### Association
 - has_many :items, dependent: :destroy
