@@ -1,0 +1,165 @@
+%main.l-container
+  / ここから右側
+  .l-content
+    %section.mypage-user-icon
+      %a{:href => "https://www.mercari.com/jp/u/243177684/"}
+        %figure
+          %img{:alt => "", :height => "60", :src => "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/243177684.jpg?1516260345", :width => "60"}/
+        %h2.bold sample name
+        .mypage-number
+          %div
+            評価
+            %span.bold 0
+          %div
+            出品数
+            %span.bold 0
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+              お知らせ
+        %li.sub
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+              やることリスト
+      .tab-content
+        %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+          %li
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/point/"}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text 有効期限が近づいているポイントがあります
+                %time
+                  %i.icon-time
+                  %span 2 時間前
+              %i.fas.fa-angle-right
+
+          %li.mypage-go-list
+            %a{:href => "/jp/mypage/notification/"} 一覧を見る
+        / %ul#mypage-tab-todo.mypage-item-list.tab-pane
+        /   %li.mypage-item-not-found.bold 現在、やることリストはありません
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 購入した商品
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"}
+              取引中
+        %li.sub
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"}
+              過去の取引
+      .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item-not-found.bold 取引中の商品がありません
+        / %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+        /   %li.mypage-item-not-found.bold 過去に取引した商品がありません
+
+  / ここまで右側
+  / ここから左側
+  .l-side
+    %nav.mypage-nav
+      %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/"}
+            マイページ
+            %i.fas.fa-angle-right
+
+        %li
+          %a.mypage-nav-list-item.active{:href => "/jp/mypage/notification/"}
+            お知らせ
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/todo/"}
+            やることリスト
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/like/history/"}
+            いいね！一覧
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/sell/"}
+            出品する
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/listings/listing/"}
+            出品した商品 - 出品中
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/listings/in_progress/"}
+            出品した商品 - 取引中
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/listings/completed/"}
+            出品した商品 - 売却済み
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/purchase/"}
+            購入した商品 - 取引中
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/purchased/"}
+            購入した商品 - 過去の取引
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/news/"}
+            ニュース一覧
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/review/history/"}
+            評価一覧
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/help_center/"}
+            ガイド
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/support/"}
+            お問い合わせ
+            %i.fas.fa-angle-right
+      %h3.mypage-nav-head
+        売上・ポイント
+      %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/sales/"}
+            売上・振込申請
+            %i.fas.fa-angle-right
+        %li
+          %a.mypage-nav-list-item{:href => "/jp/mypage/point/"}
+            ポイント
+            %i.fas.fa-angle-right
+      %h3.mypage-nav-head
+        設定
+      = succeed "\u{3000}\u{3000}\u{3000}" do
+        %ul.mypage-nav-list
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/mypage/profile/"}
+              プロフィール
+              %i.fas.fa-angle-right
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/mypage/deliver_address/"}
+              住所変更
+              %i.fas.fa-angle-right
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/mypage/card/"}
+              支払い方法
+              %i.fas.fa-angle-right
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/mypage/email_password/"}
+              メール/パスワード
+              %i.fas.fa-angle-right
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/mypage/identification/"}
+              本人情報
+              %i.fas.fa-angle-right
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/mypage/sms_confirmation/"}
+              電話番号の確認
+              %i.fas.fa-angle-right
+          %li
+            %a.mypage-nav-list-item{:href => "/jp/logout/"}
+              ログアウト
+              %i.fas.fa-angle-right
+  / ここまで左側
