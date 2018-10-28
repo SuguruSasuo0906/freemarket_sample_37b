@@ -48,13 +48,13 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|introduction|string|null: false|
-|birthday|date|null: false|
-|address_id|integer|null: false|
+|family_name|string|
+|first_name|string|
+|family_name_kana|string|
+|first_name_kana|string|
+|introduction|string|
+|birthday|date|
+|address_id|integer|foreign_key: true|
 
 ### Association
 - has_many :items, dependent: :destroy
