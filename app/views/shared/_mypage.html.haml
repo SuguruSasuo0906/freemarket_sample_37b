@@ -4,7 +4,7 @@
     %section.mypage-user-icon
       %a{:href => "https://www.mercari.com/jp/u/243177684/"}
         %figure
-          %img{:alt => "", :height => "60", :src => "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/243177684.jpg?1516260345", :width => "60"}/
+          =image_tag "member_photo.png", alt:"", height: "60", width: "60"
         %h2.bold sample name
         .mypage-number
           %div
@@ -28,7 +28,7 @@
           %li
             %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/point/"}
               %figure
-                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp.akamaized.net/images/mercari_profile.png"}/
+                =image_tag "mercari_profile.png" , alt: ""
               .mypage-item-body
                 .mypage-item-text 有効期限が近づいているポイントがあります
                 %time
