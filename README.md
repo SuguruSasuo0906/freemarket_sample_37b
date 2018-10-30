@@ -48,20 +48,19 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|introduction|string|null: false|
-|birthday|date|null: false|
-|address_id|integer|null: false|
+|family_name|string|
+|first_name|string|
+|family_name_kana|string|
+|first_name_kana|string|
+|introduction|string|
+|birthday|date|
 
 ### Association
 - has_many :items, dependent: :destroy
 - has_many :deals, dependent: :destroy
 - has_one :address, dependent: :destroy
 
-##addressesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|string|null: false|
