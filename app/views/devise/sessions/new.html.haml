@@ -1,4 +1,12 @@
-%h2 Log in
+%head
+  %script{:async => "async", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+%h2 アカウントをお持ちでない方はこちら
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  = link_to "新規会員登録", users_path(resource_name)
+.google
+  google
+.facebook
+  facebook
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label :email
@@ -8,10 +16,8 @@
     = f.label :password
     %br/
     = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+  .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
   .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+    = f.submit "ログイン", class: "recaptcha", disabled: "disabled"
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  = link_to "パスワードをお忘れの方", new_password_path(resource_name)

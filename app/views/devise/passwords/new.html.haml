@@ -1,10 +1,12 @@
-%h2 Forgot your password?
+%head
+  %script{:async => "async", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+%h2 パスワードをお忘れの方
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = devise_error_messages!
   .field
-    = f.label :email
+    = f.label :メールアドレス
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "ご登録されたメールアドレス"
+  .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
   .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+    = f.submit "送信する", class: "recaptcha", disabled: "disabled"
