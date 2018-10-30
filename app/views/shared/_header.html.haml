@@ -2,21 +2,21 @@
   .header__inner
     .header__inner__upper.clearfix
       %h1.header__inner__upper__logo
-        %a{href : ""}
+        %a{href: ""}
           =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2960600120", alt: "mercari", height: "36", width: "134", class: "mercari_logo_horizontal"
-      %form.header__inner__upper__form{:action => "https://www.mercari.com/jp/search/"}
-        %input.header__inner__upper__form__input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
+      %form.header__inner__upper__form{action: "https://www.mercari.com/jp/search/"}
+        %input.header__inner__upper__form__input.input-default{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}/
         %i.fas.fa-search.icon-search
     .header__inner__bottom.clearfix
       %nav.header__inner__bottom__l-left
         %ul.search-menu
           %li.search-menu__list.category
             %h2
-              %a.search-menu__list__text{href : ""} カテゴリーから探す
+              %a.search-menu__list__text{href: ""} カテゴリーから探す
             #search-menu__list__category-list
           %li.search-menu__list.brand
             %h2
-              %a.search-menu__list__text{href : ""} ブランドから探す
+              %a.search-menu__list__text{href: ""} ブランドから探す
               #search-menu__list__brand-list
       .header__inner__bottom__l-right
         - if user_signed_in?
