@@ -1,5 +1,5 @@
 %head
-  %script{:async => "async", :defer => "defer", :src => "https://www.google.com/recaptcha/api.js"}
+  %script{async: "async", defer: "defer", src: "https://www.google.com/recaptcha/api.js"}
 %h2 パスワードをお忘れの方
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = devise_error_messages!
