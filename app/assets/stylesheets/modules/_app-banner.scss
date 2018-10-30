@@ -1,0 +1,101 @@
+//colors
+$white: #fff;
+$black_40: rgba(0,0,0,0.4);
+
+
+.app-banner {
+	background: $white;
+}
+.app-banner-pc {
+  .clearfix {
+  	&:after {
+  		content: '';
+  		display: block;
+  		clear: both;
+  	}
+  }
+	overflow: hidden;
+	position: relative;
+	width: 750px;
+	height: 260px;
+	margin: 0 auto;
+	color: $white;
+	h2 {
+		margin: 0;
+		font-size: 16px;
+		text-shadow: 0 0 5px $black_40;
+    font-weight: bold;
+	}
+	p {
+		margin: 10px 0 0;
+		font-size: 24px;
+		text-shadow: 0 0 5px $black_40;
+	}
+	> figure {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 300px;
+		height: 100%;
+		img {
+			width: 100%;
+		}
+	}
+}
+.app-banner-icon {
+	margin: 20px 0 0;
+	figure {
+		float: left;
+	}
+	ul {
+		float: left;
+		margin: 0 0 0 24px;
+		line-height: 68px;
+	}
+	li {
+		float: left;
+		&:last-child {
+			margin: 0 0 0 16px;
+		}
+	}
+	a {
+		display: block;
+		line-height: 68px;
+	}
+	img {
+		vertical-align: middle;
+	}
+}
+.accordion-parent .icon-minus {
+	font-size: 3px;
+}
+
+@media screen and(min-width: 768px) {
+	.app-banner {
+		background: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?52408201");
+		background-position: center;
+	}
+	.app-banner-pc {
+		display: block;
+	}
+}
+@media screen and(min-width: 1068px) {
+	.app-banner-pc {
+		h2 {
+			font-size: 24px;
+		}
+		p {
+			font-size: 35px;
+		}
+	}
+	.app-banner-pc-inner {
+		left: 0;
+	}
+}
+.app-banner-pc-inner {
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	transform: translate(0, -50%);
+}
