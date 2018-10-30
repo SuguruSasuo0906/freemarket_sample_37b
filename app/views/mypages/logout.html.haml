@@ -1,0 +1,10 @@
+%body
+  %main.l-container
+    .l-content
+      .l-content
+        .l-chapter-container
+          %form.l-single-inner{:action => "https://www.mercari.com/jp/logout/", :method => "POST", :novalidate => "novalidate"}
+            .l-single-content
+              %button.btn-default.btn-red{:type => "submit"} ログアウト
+              %input{:name => "__csrf_value", :type => "hidden", :value => ""}/
+    =render "sidebar"
