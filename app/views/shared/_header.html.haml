@@ -26,6 +26,7 @@
                 %div
                   =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", class: "mypage-avator", alt: "", width: "32"
                   %span マイページ
+                  = link_to "ログアウト", destroy_user_session_path, method: :delete
               #personal-menu__list__mypage-field
             %li.personal-menu__list.notification{"data-id" => "notification", "data-key" => "", "data-url" => ""}
               %a.personal-menu__list__notification-link{"data-url" => "", :href => ""}
@@ -41,4 +42,4 @@
         - else
           %ul.sign_menu
             = link_to "ログイン", new_user_session_path, class: 'post'
-            = link_to "新規登録", new_user_registration_path, class: 'post'
+            = link_to "新規登録", users_path, class: 'get'

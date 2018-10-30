@@ -44,6 +44,10 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -66,3 +70,4 @@ gem "font-awesome-rails"
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'devise'
+gem "recaptcha", require: "recaptcha/rails"
