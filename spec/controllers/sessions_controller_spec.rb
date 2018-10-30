@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Users::SessionsController, type: :controller do
+RSpec.describe Devise::SessionsController, type: :controller do
   let(:user) { FactoryGirl.create(:user) }
     before :each do
       request.env['devise.mapping'] = Devise.mappings[:user]
