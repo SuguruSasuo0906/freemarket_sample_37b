@@ -1,21 +1,30 @@
-%h2 Sign up
+%head
+  %script{async: "async", defer: "defer", src: "https://www.google.com/recaptcha/api.js"}
+%h2 会員情報入力
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
   .field
-    = f.label :email
+    = f.label :ニックネーム
+    = f.label :必須
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
   .field
-    = f.label :password
+    = f.label :メールアドレス
+    = f.label :必須
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+  .field
+    = f.label :パスワード
+    = f.label :必須
     - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
+      %br/
+      = f.password_field :password, autocomplete: "new-password", placeholder: "#{@minimum_password_length}文字以上"
   .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    = f.label "パスワード(確認)"
+    = f.label :必須
+    - if @minimum_password_length
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "#{@minimum_password_length}文字以上"
+  .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit "次に進む", class: "recaptcha", disabled: "disabled"
