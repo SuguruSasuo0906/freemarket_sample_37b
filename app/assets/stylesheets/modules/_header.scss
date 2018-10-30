@@ -11,11 +11,12 @@ $breakpoints: (
   }
 }
 
-.clearfix{
-  clear: both;
-}
+
 
 .header__inner{
+  .clearfix{
+    clear: both;
+  }
   @include mq(sm){
     height: 90px;
     width: 380px;
