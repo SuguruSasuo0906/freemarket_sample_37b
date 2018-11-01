@@ -1,6 +1,18 @@
-.google
-  google
-.facebook
-  facebook
-.email
-  = link_to "email", new_user_registration_path, class: 'post'
+.single-container
+  =render"mypages/mypage.header"
+  .single-main
+    .l-single-container
+      %h2.l-single-head
+        新規会員登録
+      .l-single-innner
+        .l-single-content
+          %button.default.btn-mail
+            %i.far.fa-envelope
+            = link_to "メールアドレスで登録", new_user_registration_path, class: 'post'
+          %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+            %i.fab.fa-facebook-square
+            Facebookでログイン
+          %button#google-login.btn-default.btn-sns.btn-sns-google
+            %i.fab.fa-google-plus-g
+            Googleでログイン
+  =render"mypages/mypage.footer"
