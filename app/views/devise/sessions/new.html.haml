@@ -24,7 +24,7 @@
             %br/
             = f.password_field :password, autocomplete: "current-password",class:"text"
           .form-group
-            .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
+            .g-recaptcha{"data-callback":"validateRecaptcha", "data-sitekey":"6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
           .login-submit
             = f.submit "ログイン", class: "btn-red", disabled: "disabled"
             %a

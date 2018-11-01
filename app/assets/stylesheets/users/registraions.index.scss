@@ -1,26 +1,26 @@
-.l-single-container{
-  width:700px;
+.l-single-container {
+  width: 700px;
   margin: 0 auto;
-  background:#fff;
-  .l-single-head{
+  background: #fff;
+  .l-single-head {
     text-align: center;
     padding: 32px 16px;
     font-size: 22px;
     font-weight: bold;
     border-bottom: 1px solid #eee;
   }
-  .l-single-content{
-    padding:64px;
+  .l-single-content {
+    padding: 64px;
     max-width: 320px;
     .btn-mail {
       width: 100%;
       margin: 16px 0 0;
       background: #eee;
-      i{
-        color:#ccc;
-        margin:18px 0 0 7px;
+      i {
+        color: #ccc;
+        margin: 18px 0 0 7px;
       }
-      .post{
+      .post {
         color: #000;
         font-size: 14px;
         display: block;
@@ -40,7 +40,7 @@
       background: #dc4e41;
       color: #fff;
     }
-    i{
+    i {
       float: left;
       font-size: 18px;
       margin: 14px 0px 0 8px;
