@@ -3,9 +3,8 @@
     .l-content
       .l-content
         .l-chapter-container
-          %form.l-single-inner{action: "https://www.mercari.com/jp/logout/", method: "POST", novalidate: "novalidate"}
+          %form.l-single-inner
             .l-single-content
-              %button.btn-default.btn-red{type: "submit"} ログアウト
-              %input{name: "__csrf_value", type: "hidden", value: ""}/
+              %button.btn-default.btn-red{type: "submit" }
                 = link_to "ログアウト", destroy_user_session_path, method: :delete
     =render "mypages/sidebar"

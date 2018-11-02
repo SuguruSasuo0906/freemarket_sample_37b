@@ -3,6 +3,5 @@ class UsersController < ApplicationController
   end
 
   def logout
-    @user = User.new(params[:id])
   end
 end
