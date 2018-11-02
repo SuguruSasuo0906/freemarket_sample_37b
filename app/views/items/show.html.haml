@@ -59,37 +59,37 @@
     %span.item-price.bold ¥ 900
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
-  %a.item-buy-btn{"data-client" => "hidden", href: "https://www.mercari.com/jp/transaction/buy/m70068440240/"} 購入画面に進む
+  %a.item-buy-btn{data: {client: "hidden"}, href: "https://www.mercari.com/jp/transaction/buy/m70068440240/"} 購入画面に進む
   .item-description
     %p.item-description-inner
       ＊他にも数多くの商品を出品しているので、ぜひご覧ください。<br>
       ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
   .item-button-container.clearfix
     .item-button-left
-      %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m70068440240", "data-toggle" => "like", :name => "like!", :type => "button"}
+      %button.item-button.item-button-like{}
         = fa_icon 'heart'
         %span いいね!
-        %span.fade-in-down{"data-num" => "like"} 3
-      %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-opn" => "modal", href: ""}
+        %span.fade-in-down{data: {num: "like"}} 3
+      %a.item-button.item-button-report.clearfix{href: ""}
         = fa_icon 'flag'
         %span 不適切な商品の報告
-      %input{:name => "like_add_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/add/m70068440240/"}/
-      %input{:name => "like_del_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/delete/m70068440240/"}/
-      %input{:name => "__csrf_value", :type => "hidden", :value => "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
+      %input{name: "like_add_url", type: "hidden", value: "https://www.mercari.com/jp/like/add/m70068440240/"}/
+      %input{name: "like_del_url", type: "hidden", value: "https://www.mercari.com/jp/like/delete/m70068440240/"}/
+      %input{name: "__csrf_value", type: "hidden", value: "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
     .item-button-right
-      %a{href: "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
+      %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
         = fa_icon 'lock'
         %span あんしん・あんぜんへの取り組み
 
 .item-detail-message
   .message-content
-    %form.message-form{:action => "https://www.mercari.com/jp/comment/add/"}
-      %input{:name => "__csrf_value", :type => "hidden", :value => "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
+    %form.message-form{action: "https://www.mercari.com/jp/comment/add/"}
+      %input{name: "__csrf_value", type: "hidden", value: "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %input{:name => "item_id", :type => "hidden", :value => "m40602756351"}/
-      %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-      %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
-      %button.message-submit.btn-default.btn-gray{:type => "submit"}
+      %input{name: "item_id", type: "hidden", value: "m40602756351"}/
+      %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
+      %textarea.textarea-default{name: "body", type: "text", value: ""}
+      %button.message-submit.btn-default.btn-gray{type: "submit"}
         %span コメントする
 
   %ul.nav-item-link-prev-next.clearfix
@@ -104,7 +104,7 @@
 
 %section.items-box-container.clearfix.items-in-user-profile
   %h2.items-box-head
-    %a{:href => "https://www.mercari.com/jp/u/939569836/"} kako=serendipity♪さんのその他の出品
+    %a{href: "https://www.mercari.com/jp/u/939569836/"} kako=serendipity♪さんのその他の出品
   .items-box-content.clearfix
     - 6.times do
       = render "shared/items-box"
