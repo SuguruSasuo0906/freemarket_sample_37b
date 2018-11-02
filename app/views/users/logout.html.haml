@@ -7,4 +7,5 @@
             .l-single-content
               %button.btn-default.btn-red{type: "submit"} ログアウト
               %input{name: "__csrf_value", type: "hidden", value: ""}/
-    =render "sidebar"
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+    =render "mypages/sidebar"
