@@ -11,153 +11,182 @@ $breakpoints: (
   }
 }
 
-header {
-  background: #fff;
+header{
   width: 100%;
-}
-.header__inner{
-  .clearfix{
-    clear: both;
-  }
-  @include mq(sm){
-    height: 90px;
-    width: 380px;
-    margin: 0 auto;
-    padding: 8px 0 0;
-    border-style: solid;
-    border-width: 0;
-  }
-  @include mq(md){
-    height: 90px;
-    width: 700px;
-    margin: 0 auto;
-    padding: 8px 0 0;
-    border-style: solid;
-    border-width: 0;
-  }
-  @include mq(lg) {
-    height: 90px;
-    width: 1020px;
-    margin: 0 auto;
-    padding: 8px 0 0;
-    border-style: solid;
-    border-width: 0;
-  }
-  &__upper{
-    &__logo{
-      float: left;
-      .mercari_logo_horizontal{
-        zoom: 1.1;
-      }
+  background-color: #fff;
+  .header__inner{
+    .clearfix{
+      clear: both;
     }
-    &__form{
-      float: left;
-      position: relative;
-      width: calc(100% - (147px + 16px));
-      padding-left: 12px;
-      &__input{
-        height: 36px;
-        width: 100%;
-        padding: 9px 32px 9px 8px;
-        background: #fafafa;
-        font-size: 16px;
-        outline: 0;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-      }
-      .icon-search{
-        color: gray;
-        display: inline;
-        height:36px;
-        line-height:38px;
-        position:absolute;
-        right:0px;
-        text-align:center;
-        top:0px;
-        width:36px;
-        z-index:1;
-      }
+    @include mq(sm){
+      height: 90px;
+      width: 380px;
+      margin: 0 auto;
+      padding: 8px 0 0;
+      border-style: solid;
+      border-width: 0;
     }
-  }
-  &__bottom{
-    &__l-left{
-      float: left;
-      .search-menu{
-        line-height: 46px;
-        font-size: 14px;
-        &__list{
-          display: inline-block;
-          &__text{
-            text-decoration: none;
-            color: #333;
-            height: 38px;
-            line-height: 32px;
-            -webkit-transition: all 0.1s ease;
-            -moz-transition: all 0.1s ease;
-            -o-transition: all 0.1s ease;
-            transition: all  0.1s ease;
-          }
-          &__text:hover{
-            color: #b3d4fc;
-          }
+    @include mq(md){
+      height: 90px;
+      width: 700px;
+      margin: 0 auto;
+      padding: 8px 0 0;
+      border-style: solid;
+      border-width: 0;
+    }
+    @include mq(lg) {
+      height: 90px;
+      width: 1020px;
+      margin: 0 auto;
+      padding: 8px 0 0;
+      border-style: solid;
+      border-width: 0;
+    }
+    &__upper{
+      &__logo{
+        float: left;
+        .mercari_logo_horizontal{
+          zoom: 1.1;
         }
-        .brand{
-          margin-left: 10px;
+      }
+      &__form{
+        float: left;
+        position: relative;
+        width: calc(100% - (147px + 16px));
+        padding-left: 12px;
+        &__input{
+          height: 36px;
+          width: 100%;
+          padding: 9px 32px 9px 8px;
+          background: #fafafa;
+          font-size: 16px;
+          outline: 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        .icon-search{
+          color: gray;
+          display: inline;
+          height:36px;
+          line-height:38px;
+          position:absolute;
+          right:0px;
+          text-align:center;
+          top:0px;
+          width:36px;
+          z-index:1;
         }
       }
     }
-    &__l-right{
-      float: right;
-      height: 46px;
-      .personal-menu{
-        &__list{
-          display: inline-block;
-          margin-left:17px;
-          font-size: 14px;
+    &__bottom{
+      &__l-left{
+        float: left;
+        .search-menu{
           line-height: 46px;
-          &__mypage-link{
-            text-decoration: none;
-            color: #333;
-            -webkit-transition: all 0.1s ease;
-            -moz-transition: all 0.1s ease;
-            -o-transition: all 0.1s ease;
-            transition: all  0.1s ease;
-            .mypage-avator{
-              vertical-align: middle;
-              margin-right: 5px;
-              border-radius: 16px;
+          font-size: 14px;
+          &__list{
+            display: inline-block;
+            &__text{
+              text-decoration: none;
+              color: #333;
+              height: 38px;
+              line-height: 32px;
+              -webkit-transition: all 0.1s ease;
+              -moz-transition: all 0.1s ease;
+              -o-transition: all 0.1s ease;
+              transition: all  0.1s ease;
+            }
+            &__text:hover{
+              color: #b3d4fc;
             }
           }
-          &__mypage-link:hover{
-            color: #b3d4fc;
+          .brand{
+            margin-left: 10px;
           }
-          &__notification-link{
-            text-decoration: none;
-            color: #333;
-            -webkit-transition: all 0.1s ease;
-            -moz-transition: all 0.1s ease;
-            -o-transition: all 0.1s ease;
-            transition: all  0.1s ease;
-            .icon-bell{
-              margin-right: 5px;
+        }
+      }
+      &__l-right{
+        float: right;
+        height: 46px;
+        .post{
+          font-size:14px;
+          font-weight: normal;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 4px;
+          padding: 8px;
+          margin-right: 7px;
+        }
+        .get{
+          font-size: 14px;
+          font-weight: normal;
+          border: 1px solid #0099e8;
+          background: #fff;
+          color: #0099e8;
+          text-decoration: none;
+          border-radius: 4px;
+          padding: 8px;
+
+        }
+        .personal-menu{
+          &__list{
+            display: inline-block;
+            margin-left:17px;
+            font-size: 14px;
+            line-height: 46px;
+            &__mypage-link{
+              text-decoration: none;
+              color: #333;
+              -webkit-transition: all 0.1s ease;
+              -moz-transition: all 0.1s ease;
+              -o-transition: all 0.1s ease;
+              transition: all  0.1s ease;
+              .mypage-avator{
+                vertical-align: middle;
+                margin-right: 5px;
+                border-radius: 16px;
+              }
             }
-          }
-          &__notification-link:hover{
-            color: #b3d4fc;
-          }
-          &__todo-link{
-            text-decoration: none;
-            color: #333;
-            -webkit-transition: all 0.1s ease;
-            -moz-transition: all 0.1s ease;
-            -o-transition: all 0.1s ease;
-            transition: all  0.1s ease;
-            .icon-check{
-              margin-right: 5px;
+            &__mypage-link:hover{
+              color: #b3d4fc;
             }
-          }
-          &__todo-link:hover{
-            color: #b3d4fc;
+            a {
+              text-decoration: none;
+              color: #333;
+            }
+            a:hover {
+              color: #b3d4fc;
+            }
+            &__notification-link{
+              text-decoration: none;
+              color: #333;
+              -webkit-transition: all 0.1s ease;
+              -moz-transition: all 0.1s ease;
+              -o-transition: all 0.1s ease;
+              transition: all  0.1s ease;
+              .icon-bell{
+                margin-right: 5px;
+              }
+            }
+            &__notification-link:hover{
+              color: #b3d4fc;
+            }
+            &__todo-link{
+              text-decoration: none;
+              color: #333;
+              -webkit-transition: all 0.1s ease;
+              -moz-transition: all 0.1s ease;
+              -o-transition: all 0.1s ease;
+              transition: all  0.1s ease;
+              .icon-check{
+                margin-right: 5px;
+              }
+            }
+            &__todo-link:hover{
+              color: #b3d4fc;
+            }
           }
         }
       }
