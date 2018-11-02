@@ -11,8 +11,10 @@ $breakpoints: (
   }
 }
 
-
-
+header {
+  background: #fff;
+  width: 100%;
+}
 .header__inner{
   .clearfix{
     clear: both;
