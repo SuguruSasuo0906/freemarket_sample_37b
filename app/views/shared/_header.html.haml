@@ -25,7 +25,7 @@
               %a.personal-menu__list__mypage-link{href: ""}
                 %div
                   =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", class: "mypage-avator", alt: "", width: "32"
-                  %span マイページ
+                  = link_to "マイページ", "/users/#{current_user.id}"
               #personal-menu__list__mypage-field
             %li.personal-menu__list.notification{"data-id" => "notification", "data-key" => "", "data-url" => ""}
               %a.personal-menu__list__notification-link{"data-url" => "", href: ""}

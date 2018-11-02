@@ -122,10 +122,18 @@
 			> h3 {
 				margin: 26px 11px;
 			}
-		}
-		.items-box:last-child {
-			display: block;
-			margin: 0 0 0 20px;
+			.items-box-content {
+				.items-box {
+					margin: 0 0 0 20px;
+					&:first-child {
+						margin: 0;
+					}
+					&:last-child {
+						display: block;
+						margin: 0 0 0 20px;
+					}
+				}
+			}
 		}
 	}
 }

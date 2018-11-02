@@ -1,0 +1,115 @@
+=render "shared/header"
+
+%section.item-box-container
+  %h1.item-name [.kako]サン&ムーンピアス(新品.送料無料)
+  .item-main-content.clearfix
+    .item-photo
+    -# 商品画像の表示は後日実装予定
+    %table.item-detail-table
+      %tr
+        %th 出品者
+        %td
+          %a{href: "https://www.mercari.com/jp/u/387561164/"} kako=serendipity♪
+          %div
+            .item-user-ratings
+              %i.icon-good
+              %span 505
+            .item-user-ratings
+              %i.icon-normal
+              %span 17
+            .item-user-ratings
+              %i.icon-bad
+              %span 3
+      %tr
+        %th カテゴリー
+        %td
+          %a{href: "https://www.mercari.com/jp/category/1/"}
+            %div レディース
+          %a{href: "https://www.mercari.com/jp/category/20/"}
+            .item-detail-table-sub-category
+              %i.icon-arrow-right
+              バッグ
+          %a{href: "https://www.mercari.com/jp/category/214/"}
+            .item-detail-table-sub-sub-category
+              %i.icon-arrow-right
+              ショルダーバッグ
+      %tr
+        %th ブランド
+        %td
+          %a{href: "https://www.mercari.com/jp/brand/539/"}
+            %div
+              コーチ
+      %tr
+        %th 商品の状態
+        %td やや傷や汚れあり
+      %tr
+        %th 配送料の負担
+        %td 送料込み(出品者負担)
+      %tr
+        %th 配送の方法
+        %td 未定
+      %tr
+        %th 配送元地域
+        %td
+          %a{href: "https://www.mercari.com/jp/area/28/"} 兵庫県
+      %tr
+        %th 発送日の目安
+        %td 1~2日で発送
+  .item-price-box.text-center
+    %span.item-price.bold ¥ 900
+    %span.item-tax (税込)
+    %span.item-shipping-fee 送料込み
+  %a.item-buy-btn{data: {client: "hidden"}, href: "https://www.mercari.com/jp/transaction/buy/m70068440240/"} 購入画面に進む
+  .item-description
+    %p.item-description-inner
+      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。<br>
+      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
+  .item-button-container.clearfix
+    .item-button-left
+      %button.item-button.item-button-like{}
+        = fa_icon 'heart'
+        %span いいね!
+        %span.fade-in-down{data: {num: "like"}} 3
+      %a.item-button.item-button-report.clearfix{href: ""}
+        = fa_icon 'flag'
+        %span 不適切な商品の報告
+      %input{name: "like_add_url", type: "hidden", value: "https://www.mercari.com/jp/like/add/m70068440240/"}/
+      %input{name: "like_del_url", type: "hidden", value: "https://www.mercari.com/jp/like/delete/m70068440240/"}/
+      %input{name: "__csrf_value", type: "hidden", value: "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
+    .item-button-right
+      %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
+        = fa_icon 'lock'
+        %span あんしん・あんぜんへの取り組み
+
+.item-detail-message
+  .message-content
+    %form.message-form{action: "https://www.mercari.com/jp/comment/add/"}
+      %input{name: "__csrf_value", type: "hidden", value: "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %input{name: "item_id", type: "hidden", value: "m40602756351"}/
+      %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
+      %textarea.textarea-default{name: "body", type: "text", value: ""}
+      %button.message-submit.btn-default.btn-gray{type: "submit"}
+        %span コメントする
+
+  %ul.nav-item-link-prev-next.clearfix
+    %li.nav-item-link-prev
+      %a{href: "https://item.mercari.com/jp/m99586604348/"}
+        %i.icon-arrow-left
+        スーパーマリオ3Dランド ソフト  攻略本
+    %li.nav-item-link-next
+      %a{href: "https://item.mercari.com/jp/m20130884525/"}
+        monsta x ウォノ トレカ
+        %i.icon-arrow-right
+
+%section.items-box-container.clearfix.items-in-user-profile
+  %h2.items-box-head
+    %a{href: "https://www.mercari.com/jp/u/939569836/"} kako=serendipity♪さんのその他の出品
+  .items-box-content.clearfix
+    - 6.times do
+      = render "shared/items-box"
+
+=render "shared/app-banner"
+
+=render "shared/footer"
+=render "shared/sell-btn"
