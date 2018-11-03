@@ -78,7 +78,7 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 ## paymentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|token|string|null: false|
+|token_id|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
