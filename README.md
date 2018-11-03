@@ -55,6 +55,7 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 - has_many :items, dependent: :destroy
 - has_many :deals, dependent: :destroy
 - has_one :address, dependent: :destroy
+- has_one :payment, dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -69,6 +70,15 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |street_number|string|null: false|
 |building|string|
 |telephone|integer|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## paymentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|token|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
