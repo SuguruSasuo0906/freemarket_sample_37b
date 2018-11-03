@@ -1,30 +1,57 @@
 %head
   %script{async: "async", defer: "defer", src: "https://www.google.com/recaptcha/api.js"}
-%h2 会員情報入力
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :ニックネーム
-    = f.label :必須
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
-  .field
-    = f.label :メールアドレス
-    = f.label :必須
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
-  .field
-    = f.label :パスワード
-    = f.label :必須
-    - if @minimum_password_length
-      %br/
-      = f.password_field :password, autocomplete: "new-password", placeholder: "#{@minimum_password_length}文字以上"
-  .field
-    = f.label "パスワード(確認)"
-    = f.label :必須
-    - if @minimum_password_length
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "#{@minimum_password_length}文字以上"
-  .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
-  .actions
-    = f.submit "次に進む", class: "recaptcha", disabled: "disabled"
+.single-header
+  .wrapper.clearfix
+    %h1
+      %a{href:"https://www.mercari.com/jp/"}
+        %img{alt:"mercari", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?110229100"}/
+    %nav.progress-bar.signup-bar
+      %ol
+        %li.active
+          会員情報
+          .progress-status.active
+        %li
+          電話番号認証
+          .progress-status.tel
+        %li
+          住所入力
+          .progress-status.adress
+        %li
+          支払い方法
+          .progress-status.cash
+        %li
+          完了
+          .progress-status.ok
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-head 会員情報入力
+    %form.l-single-inner
+      .l-single-content
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .form-group
+            = f.label :ニックネーム
+            %span.form-repuire 必須
+            %br/
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎"
+          .form-group
+            = f.label :メールアドレス
+            %span.form-repuire 必須
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+          .form-group
+            = f.label :パスワード
+            %span.form-repuire 必須
+            - if @minimum_password_length
+              %br/
+              = f.password_field :password, autocomplete: "new-password", placeholder: "#{@minimum_password_length}文字以上"
+          .form-group
+            = f.label "パスワード(確認)"
+            %span.form-repuire 必須
+            - if @minimum_password_length
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "#{@minimum_password_length}文字以上"
+          .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
+          .actions
+            = f.submit "次に進む", class: "recaptcha", disabled: "disabled"
+=render "mypages/mypage.footer"
