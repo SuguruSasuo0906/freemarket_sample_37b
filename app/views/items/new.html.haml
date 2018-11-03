@@ -1,0 +1,142 @@
+=render "mypages/mypage.header"
+
+.wrap#sell
+  %main.l-single-container.buy-item-container
+    %section.single-main
+      #sell-container
+        .sell-container-inner
+          %h2.l-single-head 商品の情報を入力
+          %form.sell-form
+            .sell-upload-box
+              %h3.sell-up-load-head 出品画像
+              %p 最大4枚までアップロードできます
+              .sell-dropbox-container.clearfix
+                .sell-upload-drop-box
+                  %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
+                  %pre.visible-pc
+                    ドラッグアンドドロップ
+                    %br>/
+                    またはクリックしてファイルをアップロード
+            .sell-content
+              .form-group
+                %label
+                  商品名
+                  %span.form-require 必須
+                %div
+                  %input.input-default{placeholder: "商品名（必須40字まで）"}/
+              .form-group
+                %label
+                  商品の説明
+                  %span.form-require 必須
+                %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
+            .sell-content.clearfix
+              %h3.sell-sub-head 商品の詳細
+              .sell-form-box
+                .form-group
+                  %label
+                    カテゴリー
+                    %span.form-require 必須
+                  .select-wrap
+                    %select.select-default
+                      %option{value: ""} ---
+                      %option{value: "1"} レディース
+                      %option{value: "2"} メンズ
+                      %option{value: "3"} ベビー・キッズ
+                      %option{value: "4"} インテリア・住まい・小物
+                      %option{value: "5"} 本・音楽・ゲーム
+                      %option{value: "1328"} おもちゃ・ホビー・グッズ
+                      %option{value: "6"} コスメ・香水・美容
+                      %option{value: "7"} 家電・スマホ・カメラ
+                      %option{value: "8"} スポーツ・レジャー
+                      %option{value: "9"} ハンドメイド
+                      %option{value: "1027"} チケット
+                      %option{value: "1318"} 自動車・オートバイ
+                      %option{value: "10"} その他
+                    = fa_icon "angle-down"
+                .form-group
+                  %label
+                    商品の状態
+                    %span.form-require 必須
+                  .select-wrap
+                    %select.select-default
+                      %option{value: ""} ---
+                      %option{value: "1"} 新品、未使用
+                      %option{value: "2"} 未使用に近い
+                      %option{value: "3"} 目立った傷や汚れなし
+                      %option{value: "4"} やや傷や汚れあり
+                      %option{value: "5"} 傷や汚れあり
+                      %option{value: "6"} 全体的に状態が悪い
+                    = fa_icon "angle-down"
+            .sell-content.clearfix
+              %h3.sell-sub-head 配送について
+              %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
+              .sell-form-box
+                .form-group
+                  %label
+                    カテゴリー
+                    %span.form-require 必須
+                  .select-wrap
+                    %select.select-default
+                      %option{value: ""} ---
+                      %option{value: "1"} 送料込み（出品者負担）
+                      %option{value: "2"} 着払い（購入者負担）
+                    = fa_icon "angle-down"
+                .form-group
+                  %label
+                    発送元の地域
+                    %span.form-require 必須
+                  .select-wrap
+                    %select.select-default
+                      %option{value: ""} ---
+                    = fa_icon "angle-down"
+                .form-group
+                  %label
+                    発送までの日数
+                    %span.form-require 必須
+                  .select-wrap
+                    %select.select-default
+                      %option{value: ""} ---
+                      %option{value: "1"} 1~2日で発送
+                      %option{value: "2"} 2~3日で発送
+                      %option{value: "3"} 4~7日で発送
+                    = fa_icon "angle-down"
+            .sell-content.clearfix
+              %h3.sell-sub-head 販売価格(300〜9,999,999)
+              %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
+              .sell-form-box
+                %ul.sell-price
+                  %li.form-group
+                    .clearfix
+                      %label.l-left
+                        価格
+                        %span.form-require 必須
+                      .l-right.sell-price-input
+                        %span
+                          ¥
+                        %input.input-default{placeholder: "例）300", value: ""}/
+                        %div
+                        %li.clearfix
+                          .l-left 販売手数料 (10%)
+                          .l-right -
+                        %li.clearfix.bold
+                          .l-left 販売利益
+                          .l-right -
+                    .sell-content.sell-btn-box
+                      %div
+                        %p
+                          %a{href: "/jp/help_center/getting_started/prohibited_items/", target: "_blank"}> 禁止されている出品
+                          、
+                          %a{href: "/jp/help_center/getting_started/prohibited_conduct/", target: "_blank"}> 行為
+                          を必ずご確認ください。
+                        %p
+                          またブランド品でシリアルナンバー等がある場合はご記載ください。
+                          %a{href: "/jp/help_center/getting_started/counterfeit_goods/", target: "_blank"}> 偽ブランドの販売
+                          は犯罪であり処罰される可能性があります。
+                        %p
+                          また、出品をもちまして
+                          %a{href: "/jp/seller_terms/"}> 加盟店規約
+                          に同意したことになります。
+                      %button.btn-default.btn-red{type: "submit"} 出品する
+                      %a.btn-default.btn-gray もどる
+
+=render "mypages/mypage.footer"
