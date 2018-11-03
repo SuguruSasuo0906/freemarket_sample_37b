@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
-  resources :users, only: [:show ,:logout]
+  resources :users, only: [:show, :logout] do
+    resources :addresses, only: [:new, :create, :edit, :update]
+  end
 end
