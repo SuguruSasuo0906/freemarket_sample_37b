@@ -1,0 +1,2 @@
+= form_tag user_payments_path(@user) do
+  %script.payjp-button{"data-key" => ENV['PAYJP_PUBLIC_KEY'], src: "https://checkout.pay.jp/"}
