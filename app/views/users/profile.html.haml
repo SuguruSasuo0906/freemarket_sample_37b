@@ -2,15 +2,15 @@
   =render "shared/header"
   .l-container
     .l-content
-      .l-chapter-container
-        %h2.l-chapter-head プロフィール
+      .l-content__container
+        %h2.l-content__head プロフィール
         %form
-          .setting-profile-icon
+          .l-content__setting-profile-icon
             .wrapper
               %figure
                 =image_tag "member_photo.png", alt:"", height: "60", width: "60", class: "img"
               %input.input-default{name:"nickname", placeholder: "例)AYA☆セール中", type:"text", value:""}/
-          .setting-profile-content
+          .l-content__setting-profile
             %textarea.textarea-default{name:"introduction", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
             %button.btn-default.btn-red{type:"submit"} 変更する
     =render "mypages/sidebar"
