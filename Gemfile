@@ -71,3 +71,5 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'devise'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'payjp'
+gem 'dotenv-rails'
