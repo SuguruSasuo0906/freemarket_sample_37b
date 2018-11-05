@@ -1,0 +1,83 @@
+=render "mypages/mypage.header"
+
+.wrap#deals_new
+  %main.single-main
+    %section.l-single-container.buy-item-container
+      %h2.l-single-head 購入を確定しますか？
+      %section.buy-content.buy-item
+        .buy-content-inner
+          %h3.buy-item-image
+            %img.lazyload{:alt => "", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70068440240_1.jpg?1539045823"}/
+          %p.buy-item-name.bold レア！【新品未使用】エアラインキャップ カンタス航空
+          %form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m70068440240/", :method => "POST", :novalidate => "novalidate"}
+            %p.buy-price-ja.bold
+              ¥ 3,980
+              %span.item-shipping-fee.f14.bold 送料込み
+            %ul.buy-accordion.not-have
+              %li.accordion-parent
+                .accordion-toggle
+                  ポイントはありません
+            %ul.buy-price-table
+              %li.buy-price-row.buy-you-pay.bold
+                .buy-price-cell 支払い金額
+                .buy-price-cell
+                  %span{"data-buy-pay" => "3980"} ¥ 3,980
+            %input{name: "seller_id", type: "hidden", value: ""}/
+            %input{name: "payment_fee", type: "hidden", value: ""}/
+            %input{name: "payment_amount", type: "hidden", value: ""}/
+            %input{name: "price", type: "hidden", value: "3980"}/
+            %input{name: "category_id", type: "hidden", value: "214"}/
+            %input{name: "item_condition", type: "hidden", value: "4"}/
+            %input{name: "shipping_payer", type: "hidden", value: "2"}/
+            %input{name: "shipping_method", type: "hidden", value: "5"}/
+            %input{name: "shipping_duration", type: "hidden", value: "1"}/
+            %input{name: "shipping_class", type: "hidden", value: "0"}/
+            %input{name: "zip_code1", type: "hidden", value: "114"}/
+            %input{name: "zip_code2", type: "hidden", value: "0023"}/
+            %input{name: "paid_method", type: "hidden", value: "card"}/
+            %input{name: "checksum", type: "hidden", value: ""}/
+            %input{name: "payment_card_sequence_no", type: "hidden", value: "0"}/
+            %input{name: "payment_use_last_card_base64", type: "hidden", value: ""}/
+            %input{name: "item_name_base64", type: "hidden", value: ""}/
+            %input{name: "description_base64", type: "hidden", value: ""}/
+            %input{name: "brand_name_base64", type: "hidden", value: "NTM5"}/
+            %input{name: "shipping_from_area_base64", type: "hidden", value: "Mjg="}/
+            %input{name: "family_name_base64", type: "hidden", value: ""}/
+            %input{name: "first_name_base64", type: "hidden", value: ""}/
+            %input{name: "family_name_kana_base64", type: "hidden", value: ""}/
+            %input{name: "first_name_kana_base64", type: "hidden", value: ""}/
+            %input{name: "prefecture_base64", type: "hidden", value: ""}/
+            %input{name: "city_base64", type: "hidden", value: ""}/
+            %input{name: "address1_base64", type: "hidden", value: ""}/
+            %input{name: "address2_base64", type: "hidden", value: ""}/
+            %input{name: "telephone_base64", type: "hidden", value: ""}/
+            %input{name: "__csrf_value", type: "hidden", value: ""}/
+            %button.btn-default.btn-red.bold{type: "submit"} 購入する
+      %section.buy-content.buy-user-info
+        .buy-content-inner
+          %h3 配送先
+          %address.buy-user-info-text
+            〒114-0000
+            %br/
+            東京都 渋谷区渋谷川
+            1-23-4
+            %br/
+            山田 太郎
+          %p.buy-user-info-text
+          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m70068440240/"}
+            %span 変更する
+            %i.icon-arrow-right
+      %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+        .buy-content-inner
+          %h3 支払い方法
+          %p.buy-user-info-text
+            ************9999
+            %br/
+            12 / 31
+            %figure
+              %img{alt: "visa", height: "15", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?582886128", width: "49"}/
+          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/select_card/m70068440240/"}
+            %span 変更する
+            %i.icon-arrow-right
+
+=render "mypages/mypage.footer"
