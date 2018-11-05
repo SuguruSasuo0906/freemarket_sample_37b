@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     member do
       get 'logout'
+      get 'profile'
     end
     resources :addresses, only: [:new, :create, :edit, :update]
   end
