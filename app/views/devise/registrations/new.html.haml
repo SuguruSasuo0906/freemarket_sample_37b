@@ -25,7 +25,7 @@
 %main.single-main
   %section.l-single-container
     %h2.l-single-head 会員情報入力
-    %form.l-single-inner
+    .l-single-inner
       .l-single-content
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
