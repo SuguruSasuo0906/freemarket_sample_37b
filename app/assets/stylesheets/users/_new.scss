@@ -52,9 +52,6 @@
          .active:before {
           @include border-left;
          }
-         .tel:before {
-          @include border-left;
-         }
          .adress:before {
           @include border-left;
          }
@@ -62,9 +59,6 @@
           @include border-left;
          }
          .ok:after {
-          @include border-right;
-         }
-         .tel:after {
           @include border-right;
          }
          .adress:after {
