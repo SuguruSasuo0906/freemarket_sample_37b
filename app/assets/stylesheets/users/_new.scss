@@ -35,6 +35,7 @@
         float: left;
         position: relative;
         &.active{
+
           color: #ea352d;
         }
         .progress-status {
@@ -46,13 +47,9 @@
           font-weight: 600;
           &.active{
             background: #ea352d;
-
           }
         }
          .active:before {
-          @include border-left;
-         }
-         .tel:before {
           @include border-left;
          }
          .adress:before {
@@ -62,9 +59,6 @@
           @include border-left;
          }
          .ok:after {
-          @include border-right;
-         }
-         .tel:after {
           @include border-right;
          }
          .adress:after {
@@ -84,9 +78,8 @@
     label {
       font-weight: 600;
       font-size: 14px;
-
     }
-    span {
+    .form-repuire{
       background: #ea352d;
       margin: 0 0 0 8px;
       padding: 2px 4px;
