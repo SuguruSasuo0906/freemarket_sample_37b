@@ -1,4 +1,9 @@
 #deals_new {
+  .fa-angle-right {
+    display: inline;
+    margin: 0;
+    font-size: 16px;
+  }
   .bold {
     font-weight: 600;
   }
@@ -134,6 +139,11 @@
   .buy-user-info-fix {
     display: block;
     text-align: right;
+    >i {
+      float: none;
+      font-size: 14px;
+      margin: 0;
+    }
   }
   .buy-user-info-text {
     margin: 8px 0 0;

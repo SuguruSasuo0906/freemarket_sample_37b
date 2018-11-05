@@ -1,4 +1,4 @@
-= create_header
+alt:= create_header
 
 .wrap#deals_new
   %main.single-main
@@ -7,9 +7,9 @@
       %section.buy-content.buy-item
         .buy-content-inner
           %h3.buy-item-image
-            %img.lazyload{:alt => "", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70068440240_1.jpg?1539045823"}/
+            %img.lazyload{alt: "", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70068440240_1.jpg?1539045823"}/
           %p.buy-item-name.bold レア！【新品未使用】エアラインキャップ カンタス航空
-          %form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m70068440240/", :method => "POST", :novalidate => "novalidate"}
+          %form.buy-form{action: "https://www.mercari.com/jp/transaction/buy/done/m70068440240/", method: "POST", novalidate: "novalidate"}
             %p.buy-price-ja.bold
               ¥ 3,980
               %span.item-shipping-fee.f14.bold 送料込み
@@ -21,7 +21,7 @@
               %li.buy-price-row.buy-you-pay.bold
                 .buy-price-cell 支払い金額
                 .buy-price-cell
-                  %span{"data-buy-pay" => "3980"} ¥ 3,980
+                  %span{data: {buy: {pay: "3980"}}} ¥ 3,980
             %input{name: "seller_id", type: "hidden", value: ""}/
             %input{name: "payment_fee", type: "hidden", value: ""}/
             %input{name: "payment_amount", type: "hidden", value: ""}/
@@ -64,10 +64,10 @@
             %br/
             山田 太郎
           %p.buy-user-info-text
-          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m70068440240/"}
+          = link_to '#', class: "buy-user-info-fix" do
             %span 変更する
-            %i.icon-arrow-right
-      %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+            = fa_icon "angle-right"
+      %section.buy-content.buy-user-info{data: {buy: "pay-method"}}
         .buy-content-inner
           %h3 支払い方法
           %p.buy-user-info-text
@@ -76,8 +76,8 @@
             12 / 31
             %figure
               %img{alt: "visa", height: "15", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?582886128", width: "49"}/
-          %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/select_card/m70068440240/"}
+          = link_to '#', class: "buy-user-info-fix" do
             %span 変更する
-            %i.icon-arrow-right
+            = fa_icon "angle-right"
 
 = create_footer
