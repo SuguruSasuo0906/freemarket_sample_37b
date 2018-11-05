@@ -14,5 +14,6 @@ Rails.application.routes.draw do
       get 'profile'
     end
     resources :addresses, only: [:new, :create, :edit, :update]
+    resources :payments, only: [:new, :create]
   end
 end

@@ -12,7 +12,7 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      redirect_to root_path
+      redirect_to new_user_payment_path(@user)
     else
       render :new
     end
