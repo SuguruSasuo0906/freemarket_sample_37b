@@ -1,7 +1,7 @@
 .l-single-container {
   width: 700px;
   margin: 0 auto;
-  background: #fff;
+  background: $white;
   .l-single-head {
     text-align: center;
     padding: 32px 16px;
@@ -33,12 +33,12 @@
     .btn-sns-facebook {
     margin: 16px 0 0;
     background: #385185;
-    color: #fff;
+    color: $white;
    }
     .btn-sns-google {
       margin: 16px 0 0;
       background: #dc4e41;
-      color: #fff;
+      color: $white;
     }
     i {
       float: left;

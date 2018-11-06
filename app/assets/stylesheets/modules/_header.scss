@@ -108,7 +108,8 @@ header{
       &__l-right{
         float: right;
         height: 46px;
-        margin-top:13px;
+        .sign_menu{
+        margin-top: 13px;
         .post{
           font-size:14px;
           font-weight: normal;
@@ -129,8 +130,7 @@ header{
           text-decoration: none;
           border-radius: 4px;
           padding: 8px;
-
-        }
+        }}
         .personal-menu{
           &__list{
             display: inline-block;

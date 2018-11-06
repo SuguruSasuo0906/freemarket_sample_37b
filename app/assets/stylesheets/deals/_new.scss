@@ -1,0 +1,190 @@
+#deals_new {
+  .fa-angle-right {
+    display: inline;
+    margin: 0;
+    font-size: 16px;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+  }
+  label {
+    display: inline-block;
+  }
+  a {
+    color: #0099e8;
+    text-decoration: none;
+  }
+  .btn-red {
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: $white;
+  }
+  .btn-default {
+    box-sizing: border-box;
+    padding: 0;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-gray {
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: $white;
+  }
+  .l-single-container {
+    width: 700px;
+    margin: 0 auto;
+    background: $white;
+  }
+  .l-single-head .lsingle-container {
+    border: none;
+  }
+  .l-single-content {
+    padding: 64px;
+    max-width: 320px;
+  }
+  i {
+    float: left;
+    font-size: 18px;
+    margin: 14px 0 0 8px;
+  }
+  .btn-sns-facebook {
+    margin: 16px 0 0;
+    background: #385185;
+    color: $white;
+  }
+  .btn-sns-google {
+    margin: 16px 0 0;
+    background: #dc4e41;
+    color: $white;
+  }
+  .buy-price-ja {
+    margin: 16px 0 0;
+    font-size: 28px;
+    .item-shipping-fee {
+      margin: 0 0 0 8px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .buy-item {
+    text-align: center;
+    img {
+      margin: 0;
+      width: 148px;
+  	}
+    .btn-red {
+      margin: 16px 0 0;
+    }
+  }
+  .buy-content {
+    margin: 40px 0 0;
+    padding: 24px 12.5% 0;
+    border-top: 1px solid #f5f5f5;
+    &:first-of-type {
+      margin: 0;
+    }
+    &:last-of-type {
+      padding: 40px 12.5%;
+    }
+  }
+  .buy-item-image {
+    margin: 0;
+    height: 148px;
+  }
+  .buy-item-name {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .buy-accordion {
+    margin: 16px 0 0;
+    .accordion-toggle {
+      padding: 16px;
+      background: #ccc;
+      border: 1px solid #ccc;
+    }
+  }
+  .buy-price-row {
+    display: table-row;
+    border-top: 1px solid #ccc;
+  }
+  .buy-price-cell {
+    display: table-cell;
+    padding: 16px 0;
+    text-align: right;
+    &:first-child {
+      text-align: left;
+      width: 226px;
+    }
+  }
+  .buy-you-pay {
+    font-size: 28px;
+  }
+  .buy-user-info-fix {
+    display: block;
+    text-align: right;
+    >i {
+      float: none;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+  .buy-user-info-text {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .sell-upload-head + p {
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  .buy-content-inner {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .buy-form p {
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+}
+@media screen and(min-width: 768px) {
+  #deals_new {
+    .l-single-head {
+      padding: 32px 16px;
+      font-size: 22px;
+      line-height: 1.5;
+      text-align: center;
+      border: none;
+    }
+    .buy-user-info {
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      h3 {
+        margin: 40px 0 0;
+        font-size: 14px;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      address {
+        display: block;
+      }
+    }
+  }
+}
