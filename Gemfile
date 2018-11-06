@@ -73,3 +73,5 @@ gem 'devise'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'payjp'
 gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
