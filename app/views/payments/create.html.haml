@@ -18,17 +18,17 @@
           .progress-status.cash.active
         %li
           完了
-          .progress-status.ok
-
-= form_tag user_payments_path(@user) do
-  %script.payjp-button{"data-key" => ENV['PAYJP_PUBLIC_KEY'], src: "https://checkout.pay.jp/"}
-
-
+          .progress-status.ok.active
 %main.single-main
   %section.l-single-container
-    %h2.l-single-head 支払い方法
+    %h2.l-single-head kannryou!
     .l-single-inner
       .l-single-content
         %button.btn-default.btn-red{type: "submit" }
-          = link_to "登録する", user_payments_path, method: :post
+          = link_to "", root_path, method: :get
+
+
+
+
+
 =render"mypages/mypage.footer"

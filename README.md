@@ -50,6 +50,9 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |password|string|null: false|
 |introduction|string|
 |birthday|date|
+|provider|string|
+|uid|string|
+|token|string|
 
 ### Association
 - has_many :items, dependent: :destroy

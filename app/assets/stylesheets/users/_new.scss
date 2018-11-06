@@ -35,6 +35,7 @@
         float: left;
         position: relative;
         &.active{
+
           color: #ea352d;
         }
         .progress-status {
@@ -46,7 +47,6 @@
           font-weight: 600;
           &.active{
             background: #ea352d;
-
           }
         }
          .active:before {
@@ -78,9 +78,8 @@
     label {
       font-weight: 600;
       font-size: 14px;
-
     }
-    span {
+    .form-repuire{
       background: #ea352d;
       margin: 0 0 0 8px;
       padding: 2px 4px;
