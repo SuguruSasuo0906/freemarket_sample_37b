@@ -1,0 +1,34 @@
+%head
+  %script{async: "async", defer: "defer", src: "https://www.google.com/recaptcha/api.js"}
+.single-header
+  .wrapper.clearfix
+    %h1
+      %a{href:"/"}
+        %img{alt:"mercari", src:"//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?110229100"}/
+    %nav.progress-bar.signup-bar
+      %ol
+        %li
+          会員情報
+          .progress-status.member.active
+        %li
+          住所入力
+          .progress-status.adress.active
+        %li.active
+          支払い方法
+          .progress-status.cash.active
+        %li
+          完了
+          .progress-status.ok.active
+%main.single-main
+  %section.l-single-container
+    %h2.l-single-head kannryou!
+    .l-single-inner
+      .l-single-content
+        %button.btn-default.btn-red{type: "submit" }
+          = link_to "", root_path, method: :get
+
+
+
+
+
+=render"mypages/mypage.footer"
