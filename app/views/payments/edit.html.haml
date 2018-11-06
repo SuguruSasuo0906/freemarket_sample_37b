@@ -2,22 +2,22 @@
   %main.l-container.clearfix
     .l-content
       %section.l-chapter-container
-        %h2.l-chapter-head 支払い方法
+        %h2.l-chapter__head 支払い方法
         .l-single-inner
           %section
             .l-single-content
-              %h3.l-chapter-sub-head クレジットカード一覧
-            %ul.settings-payment-list
+              %h3.l-chapter__sub__head クレジットカード一覧
+            %ul.settings-payment
               %li
                 %form.l-single-content{action: "https://www.mercari.com/jp/mypage/card/delete/"}
                   %figure
                     %img{alt: "visa", height: "15", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2624664752", width: "49"}/
                   %input{name: "__csrf_value", type: "hidden", value: ""}/
                   %input{name: "card_sequence_no", type: "hidden", value: "0"}/
-                  .settings-payment-num ************7813
-                  .settings-payment-num 12 / 19
+                  .settings-payment__num ************7813
+                  .settings-payment__num 12 / 19
                   %input{name: "method", type: "hidden", value: "card"}/
-                  %button.settings-payment-remove{type: "submit"}
+                  %button.settings-payment__remove{type: "submit"}
                     削除する
           .settings-not-regist
             = link_to "/jp/help_center/category/6/", target: "_blank" do
