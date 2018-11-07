@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_one :address, dependent: :destroy
   has_one :payment, dependent: :destroy
 
+  validates :nickname,
+  presence: true,
+  uniqueness: { case_sensitive: :false },
+  length: { maximum: 20 }
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user
@@ -15,8 +20,7 @@ class User < ApplicationRecord
         provider: auth.provider,
         nickname: auth.info.name,
         email:    auth.info.email,
-        password: Devise.friendly_token[0, 20]
-      )
+        password: Devise.friendly_token[0, 20])
     end
     user
   end
@@ -33,9 +37,4 @@ class User < ApplicationRecord
     end
     user
   end
-
-  validates :nickname,
-    presence: true,
-    uniqueness: { case_sensitive: :false },
-    length: { maximum: 20 }
 end
