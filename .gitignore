@@ -18,5 +18,5 @@
 
 .byebug_history
 public/uploads/*
-.env
+.env.development
 .env.production
