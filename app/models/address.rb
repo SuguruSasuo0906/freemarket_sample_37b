@@ -23,4 +23,5 @@ VALID_KANA_NAME =  /\A[\p{katakana}\p{blank}ー－]+\z/
   validates :city, presence: true
   validates :street_number, presence: true
   validates :telephone, format: { with: VALID_PHONE_REGEX, message: '10桁または11桁の数字を入力してください', allow_blank: true }
+  validates :user_id, uniqueness: true
 end
