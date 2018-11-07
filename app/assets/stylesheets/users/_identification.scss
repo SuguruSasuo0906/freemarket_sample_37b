@@ -1,0 +1,217 @@
+#identification {
+  body {
+    position: relative;
+    min-height: 100%;
+    font-family: Source Sans Pro, Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+    background: #f5f5f5;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .form-require {
+    background: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+  }
+  h2 {
+    line-height: 1.4;
+    display: block;
+    font-size: 1.5em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+  }
+  a {
+    color: #0099e8;
+    text-decoration: none;
+  }
+  .clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .btn-red {
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+  }
+  .btn-default {
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .select-default {
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .form-group {
+    margin: 40px 0 0;
+    label {
+      font-weight: 600;
+    }
+    .input-default {
+      width: 100%;
+      margin: 8px 0 0;
+    }
+    &:first-child {
+      margin: 0;
+    }
+    select {
+      width: 100%;
+    }
+    .select-wrap {
+      margin: 8px 0 0;
+    }
+  }
+  label {
+    display: inline-block;
+  }
+  .l-single {
+    &__inner {
+      border-top: 1px solid #f5f5f5;
+      padding: 40px;
+      p {
+        margin: 8px 0 0;
+      }
+    }
+  }
+  .l-chapter {
+    &__container {
+      margin: 40px 0 0;
+      background: #fff;
+      &:first-child {
+        margin: 0;
+      }
+    }
+    &__head {
+      padding: 12px 4%;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      font-size: 18px;
+    }
+    .l-single-content {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .mypage-identification {
+      button[type="submit"] {
+        margin: 40px 0 0;
+      }
+    }
+  }
+  .select-wrap {
+    position: relative;
+    background: #fff;
+    .fa-angle-down {
+      position: absolute;
+      top:55%;
+      z-index: 2;
+      color: #888;
+      font-size: 26px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(-200%, -50%);
+      &:last-child {
+        transform: translate(-400%, -50%);
+      }
+    }
+  }
+  .form-info-text {
+    margin: 8px 0 0;
+    color: #888;
+    line-height: 1.5;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .l-container {
+    margin: 24px auto 0;
+    padding: 0 0 40px;
+  }
+  button {
+    padding: 0;
+  }
+
+  @media screen and(min-width: 768px) {
+    .l-single-inner {
+      padding: 64px;
+    }
+    .birthday-select-wrap {
+      display: inline-block;
+      width: 100%;
+      .select-wrap {
+        width: 100%;
+        select {
+          width: 140px;
+          display: inline-block;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        span {
+          margin: 0 8px;
+          display: inline-block;
+        }
+      }
+    }
+    .l-chapter-head {
+      font-size: 24px;
+      padding: 8px 24px;
+    }
+    .l-container {
+      width: 700px;
+    }
+    .l-content {
+      float: none;
+      width: 700px;
+      margin: auto;
+    }
+  }
+  .address-info {
+    margin: 0 0 0 4px;
+    address {
+      font-size: 16px;
+      margin: 8px 0 0;
+      p {
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (min-width: 1068px) {
+  .l-content {
+      float: right;
+    }
+  }
+}
