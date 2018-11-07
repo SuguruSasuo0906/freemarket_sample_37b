@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     member do
       get 'logout'
       get 'profile'
+      get 'identification'
     end
     resources :addresses, only: [:new, :create, :edit, :update]
     resources :payments, only: [:new, :create, :edit]

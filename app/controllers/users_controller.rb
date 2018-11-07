@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout "mypages", only: [:identification]
+
   def show
   end
 
@@ -6,6 +8,9 @@ class UsersController < ApplicationController
   end
 
   def profile
+  end
+
+  def identification
   end
 
 end
