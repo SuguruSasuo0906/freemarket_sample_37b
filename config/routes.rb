@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {
-   registrations: 'users/registrations'
+   registrations: 'users/registrations',
+   omniauth_callbacks: 'users/omniauth_callbacks'
   }
   devise_scope :user do
     get 'users' => 'users/registrations#index'
@@ -16,6 +17,6 @@ Rails.application.routes.draw do
       get 'profile'
     end
     resources :addresses, only: [:new, :create, :edit, :update]
-    resources :payments, only: [:new, :create]
+    resources :payments, only: [:new, :create, :edit]
   end
 end

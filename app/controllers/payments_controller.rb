@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
   before_action :set_user
   before_action :move_to_sign_in
   before_action :move_to_mypage
-
+  layout "mypages", only: [:edit]
   def new
   end
 
@@ -18,6 +18,9 @@ class PaymentsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
   end
 
   private
