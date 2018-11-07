@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :show] do
     resources :deals, only: [:new]
   end
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :update] do
     member do
       get 'logout'
       get 'profile'
