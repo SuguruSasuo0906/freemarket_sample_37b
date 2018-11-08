@@ -1,3 +1,4 @@
+# encording: UTF-8
 class Address < ApplicationRecord
   belongs_to :user
   enum prefecture: {

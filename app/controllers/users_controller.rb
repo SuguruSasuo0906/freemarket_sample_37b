@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+layout "mypages", only: [:identification]
 before_action :set_user
 
   def show
@@ -9,6 +10,9 @@ before_action :set_user
   end
 
   def profile
+  end
+  
+  def identification
   end
 
   def update
@@ -28,4 +32,5 @@ before_action :set_user
   def set_user
     @user = User.find(params[:id])
   end
+
 end
