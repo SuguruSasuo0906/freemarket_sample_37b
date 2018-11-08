@@ -5,7 +5,8 @@
       %link_to.img{href: ""}
         %figure
           =image_tag "member_photo.png", alt:"", height: "60", width: "60"
-        %h2.bold sample name
+        %h2.bold
+          =@user.nickname
         .mypage-number
           %div
             評価
@@ -139,7 +140,7 @@
               プロフィール
               %i.fas.fa-angle-right
           %li
-            %a.mypage-nav-list-item{href: "/jp/mypage/deliver_address/"}
+            %a.mypage-nav-list-item{href: edit_user_address_path(@user)}
               住所変更
               %i.fas.fa-angle-right
           %li
@@ -147,15 +148,15 @@
               支払い方法
               %i.fas.fa-angle-right
           %li
-            %a.mypage-nav-list-item{href: "/jp/mypage/email_password/"}
+            %a.mypage-nav-list-item{href: ""}
               メール/パスワード
               %i.fas.fa-angle-right
           %li
-            %a.mypage-nav-list-item{href: "/jp/mypage/identification/"}
+            %a.mypage-nav-list-item{href: ""}
               本人情報
               %i.fas.fa-angle-right
           %li
-            %a.mypage-nav-list-item{href: "/jp/mypage/sms_confirmation/"}
+            %a.mypage-nav-list-item{href: ""}
               電話番号の確認
               %i.fas.fa-angle-right
           %li

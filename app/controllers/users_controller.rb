@@ -3,6 +3,7 @@ layout "mypages", only: [:identification]
 before_action :set_user
 
   def show
+
   end
 
   def logout
