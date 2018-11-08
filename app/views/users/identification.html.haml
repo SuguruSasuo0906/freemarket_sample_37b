@@ -1,0 +1,42 @@
+%main.l-container.clearfix
+  .wrap#identification
+    .l-content
+      %section.l-chapter__container.mypage-identification
+        %h2.l-chapter__head 本人情報の登録
+        %p.text-center お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+        = form_for :obj ,html: {class: 'l-single__inner'} do |f|
+          .form-group
+            = f.label :住所
+            %span.form-require 必須
+            .address-info
+              %address
+                %p 〒114-0000
+                %p 東京都渋谷渋谷川1-23-4
+                %p 山田 太郎
+              = link_to '編集'
+            .clearfix
+          .form-group
+            = f.label :生年月日
+            %span.form-require 必須
+            %br/
+            .birthday-select-wrap
+              .select-wrap
+                = raw sprintf(f.date_select(:birthday,
+                    {order: [:year, :month, :day],
+                    use_month_numbers: true,
+                    date_separator: '%s'},
+                    {class: "select-default"}),
+                  '<i class="fa fa-angle-down"></i><span>年</span>', '<i class="fa fa-angle-down"></i><span>月</span> ')
+                %span 日
+                = fa_icon "angle-down"
+            %p.form-info-text
+              ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+            .clearfix
+          = f.submit :登録する, class: 'btn-default btn-red', id: 'identification-submit'
+          .form-group.text-right
+            %p
+              = link_to "/jp/help_center/article/423/", target: "_blank" do
+                本人情報の登録について
+                = fa_icon "angle-right"
+
+  = render "mypages/sidebar"
