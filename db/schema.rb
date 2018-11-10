@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181108034937) do
+ActiveRecord::Schema.define(version: 20181108083723) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "postal_code", null: false
@@ -28,20 +28,28 @@ ActiveRecord::Schema.define(version: 20181108034937) do
     t.string "first_name_kana", null: false
   end
 
+  create_table "deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "shipping_burden", null: false
+    t.integer "origin_region", null: false
+    t.integer "shipping_days", null: false
+    t.integer "shipping_method", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "name", null: false
-    t.integer "pice", null: false
+    t.integer "price", null: false
     t.text "introduction", null: false
-    t.integer "seller_id", null: false
-    t.integer "buyer_id"
+    t.integer "user_id", null: false
     t.integer "large_category_id"
     t.integer "medium_category_id"
     t.integer "small_category_id"
     t.integer "size_id"
     t.integer "brand_id"
-    t.string "condition", null: false
-    t.string "deal_condition", null: false
-    t.integer "delivery_id"
+    t.integer "condition", null: false
+    t.integer "deal_condition", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

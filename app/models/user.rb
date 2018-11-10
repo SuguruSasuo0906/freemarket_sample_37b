@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_one :address, dependent: :destroy
   has_one :payment, dependent: :destroy
+  has_many :items, dependent: :destroy
+  has_many :deals, dependent: :destroy
 
   validates :nickname,
   presence: true,
