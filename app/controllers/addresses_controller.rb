@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_user
+  layout "create", only: [:new]
 
   def new
     if user_signed_in?
