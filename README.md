@@ -93,8 +93,7 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |name|text|null: false|
 |price|integer|null: false|
 |introduction|text|null: false|
-|seller_id|integer|null: false, foreign_key: true|
-|buyer_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |large_category_id|integer|null: false, foreign_key: true|
 |medium_category_id|integer|null: false, foreign_key: true|
 |small_category_id|integer|foreign_key: true|
@@ -102,14 +101,11 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |brand_id|integer|foreign_key: true|
 |condition|string|null: false|
 |deal_condition|string|null: false|
-|delivery_id|integer|null: false, foreign_key: true|
 |created_at|datetime|null: false|
 |updated_at|datetime|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :seller_id, class_name: 'User'
-- belongs_to :buyer_id, class_name: 'User'
 - has_many :photos, dependent: :destroy
 - belongs_to :large_category
 - belongs_to :medium_category
@@ -122,7 +118,7 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 ## dealsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|dealt_at|datetime|null: false|
+|user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -132,10 +128,10 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 ## deliveriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|shipping_burden|string|null: false|
-|origin_region|string|null: false|
-|shipping_days|string|null: false|
-|shipping_method|string|null: false|
+|shipping_burden|integer|null: false|
+|origin_region|integer|null: false|
+|shipping_days|integer|null: false|
+|shipping_method|integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
 
 ### Association
