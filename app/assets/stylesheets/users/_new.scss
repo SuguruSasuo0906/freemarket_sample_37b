@@ -1,3 +1,4 @@
+
 @mixin border-left {
   position: absolute;
   bottom:5px;
@@ -73,6 +74,9 @@
 }
 .l-single-inner {
   padding:0 ;
+  li.error-message{
+    color:$red;
+  }
   .form-group {
     margin-top: 40px;
     label {
