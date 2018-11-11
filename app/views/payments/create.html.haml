@@ -1,6 +1,6 @@
 %head
   %script{async: "async", defer: "defer", src: "https://www.google.com/recaptcha/api.js"}
-.single-header
+.single-header#create-header
   .wrapper.clearfix
     %h1
       %a{href:"/"}
@@ -13,22 +13,17 @@
         %li
           住所入力
           .progress-status.adress.active
-        %li.active
+        %li
           支払い方法
           .progress-status.cash.active
-        %li
+        %li.active
           完了
           .progress-status.ok.active
 %main.single-main
   %section.l-single-container
-    %h2.l-single-head kannryou!
+    %h2.l-single-head 登録が完了しました
     .l-single-inner
       .l-single-content
         %button.btn-default.btn-red{type: "submit" }
-          = link_to "", root_path, method: :get
-
-
-
-
-
+          = link_to "トップへ戻る", root_path, method: :get
 =render"mypages/mypage.footer"
