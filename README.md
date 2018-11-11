@@ -204,10 +204,7 @@ https://drive.google.com/file/d/1LigQ5Lw3vgyLxmpJne4sSXfXoEVRXuNK/view?usp=shari
 |Column|Type|Options|
 |------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
-|photo|string|null: false|
-|photo_num|integer|null: false|
-|created_at|datetime|null: false|
-|updated_at|datetime|
+|photo_url|string|null: false|
 
 ### Association
 - belongs_to :item
