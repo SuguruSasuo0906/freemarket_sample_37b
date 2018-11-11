@@ -3,6 +3,8 @@ class PaymentsController < ApplicationController
   before_action :move_to_sign_in
   before_action :move_to_mypage
   layout "mypages", only: [:edit]
+  layout "create", only: [:new]
+
   def new
   end
 
