@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.build_delivery
+    @item.photos.build
   end
 
   def create
@@ -42,6 +43,7 @@ class ItemsController < ApplicationController
       :size_id,
       :brand_id,
       :condition,
+      photos_attributes: [:id, :photo_url],
       delivery_attributes: [:id, :shipping_burden, :origin_region, :shipping_days, :shipping_method]
       ).merge(user_id: current_user.id)
   end
