@@ -76,18 +76,18 @@
                 %ul.sell-price
                   %li.form-group
                     .clearfix
-                      = f.label :価格 ,class: "l-left"
+                      = f.label :価格 ,class: "itemTitleLabel l-left"
                       %span.form-require 必須
-                      .l-right.sell-price-input
+                      #inputPrice.l-right.sell-price-input
                         %span ¥
                         = f.text_field :price ,class: "input-default", id: "item_price", placeholder: "例）300", value: ""
                         %div
                         %li.clearfix
                           .l-left 販売手数料 (10%)
-                          .l-right -
+                          #handling_charge.l-right -
                         %li.clearfix.bold
                           .l-left 販売利益
-                          .l-right -
+                          #profitFee.l-right -
                     .sell-content.sell-btn-box
                       %div
                         %p
