@@ -9,13 +9,17 @@
             - @item.errors.full_messages.each do |message|
               = message
             .sell-upload-box
-              %h3.sell-up-load-head 出品画像
+              %h3.sell-up-load-head
+                出品画像
+                %span.form-require 必須
               %p 最大4枚までアップロードできます
               .sell-dropbox-container.clearfix
                 .sell-upload-drop-box
-                  %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
+                  - 4.times do |i|
+                    = f.fields_for :photos do |i|
+                      = i.file_field :photo_url
                   %pre.visible-pc
-                    ドラッグアンドドロップ
+                    クリックしてファイルをアップロード
                     %br>/
             .sell-content
               .form-group
