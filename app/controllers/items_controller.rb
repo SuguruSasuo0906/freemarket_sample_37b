@@ -1,11 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :set_user, except: [:index]
 
   def index
     @items = Item.includes(:user).order('created_at DESC').limit(4)
-    if user_signed_in?
-      @user = User.find(current_user.id)
-    end
   end
 
   def new
@@ -28,9 +24,6 @@ class ItemsController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find(current_user.id)
-  end
 
   def item_params
     params.require(:item).permit(
