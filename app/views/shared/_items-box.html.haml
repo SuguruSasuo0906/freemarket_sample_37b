@@ -1,6 +1,6 @@
 - @items.each do |item|
   %section.items-box
-    %a{href: "/items/1/deals/new"}
+    =link_to new_item_deal_path(item) do
       %figure.items-box-photo
         -if item.photos.first.photo_url
           = image_tag item.photos.first.photo_url, class: 'lazyload'
