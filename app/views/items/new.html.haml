@@ -5,7 +5,7 @@
       #sell-container
         .sell-container-inner
           %h2.l-single-head 商品の情報を入力
-          = form_for @item, url: user_items_path(@user),class: "sell-form" do |f|
+          = form_for @item, url: items_path,class: "sell-form" do |f|
             - @item.errors.full_messages.each do |message|
               = message
             .sell-upload-box
