@@ -6,20 +6,18 @@
   %h2.pickup-head ピックアップカテゴリー
   %section.items-box-container.clearfix
     %h3.text-center
-      %a{href: "/jp/category/1/"} レディース 新着アイテム
+      =link_to "レディース 新着アイテム", "/jp/category/1/"
     .items-box-content.clearfix
-      = render "shared/items-box"
+      = render partial: "shared/items-box", collection: @items, as: "item"
     .view-all
-      %a{href: "#"}
-        すべての商品を見る
+      = link_to "すべての商品を見る","#"
   %section.items-box-container.clearfix
     %h3.text-center
-      %a{href: "/jp/category/1/"} メンズ 新着アイテム
+      = link_to "メンズ 新着アイテム", "/jp/category/1/"
     .items-box-content.clearfix
-      = render "shared/items-box"
+      = render partial: "shared/items-box", collection: @items, as: "item"
     .view-all
-      %a{href: "#"}
-        すべての商品を見る
+      =link_to "すべての商品を見る", "#"
 
 =render "shared/app-banner"
 
