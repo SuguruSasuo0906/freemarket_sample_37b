@@ -1,11 +1,15 @@
-%section.items-box
-  %a{href: "/items/1/deals/new"}
-    %figure.items-box-photo
-      %img.lazyload{alt: "天然石 トパーズ ピアス", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m48559140106_1.jpg?1527727062"}/
-    .items-box-body
-      %h3.items-box-name.font-2 天然石 トパーズ ピアス
-      .items-box-num.clearfix
-        .items-box-price.font-5 ¥ 1,300
-        .items-box-likes.font-2
-          %i.icon-like-border
-        %p.item-box-tax (税込)
+- @items.each do |item|
+  %section.items-box
+    %a{href: "/items/1/deals/new"}
+      %figure.items-box-photo
+        -if item.photos.first.photo_url
+          = image_tag item.photos.first.photo_url, class: 'lazyload'
+      .items-box-body
+        %h3.items-box-name.font-2
+          = item.name
+        .items-box-num.clearfix
+          .items-box-price.font-5
+            = "¥" + "#{item.price}"
+          .items-box-likes.font-2
+            %i.icon-like-border
+          %p.item-box-tax (税込)
