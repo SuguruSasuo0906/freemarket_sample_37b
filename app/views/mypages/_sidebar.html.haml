@@ -3,7 +3,7 @@
     %nav.mypage-nav
       %ul.mypage-nav-list
         %li
-          = link_to '#', class: 'mypage-nav-list__item' do
+          = link_to user_path(@user), class: 'mypage-nav-list__item' do
             マイページ
             %i.fas.fa-angle-right
         %li
@@ -74,11 +74,11 @@
       = succeed "\u{3000}\u{3000}\u{3000}" do
         %ul.mypage-nav-list
           %li
-            = link_to 'profile_user_path', class: 'mypage-nav-list__item' do
+            = link_to profile_user_path(@user), class: 'mypage-nav-list__item' do
               プロフィール
               %i.fas.fa-angle-right
           %li
-            = link_to 'edit_user_address_path(@user)',class: 'mypage-nav-list__item' do
+            = link_to edit_user_address_path(@user), class: 'mypage-nav-list__item' do
               住所変更
               %i.fas.fa-angle-right
           %li
@@ -98,6 +98,6 @@
               電話番号の確認
               %i.fas.fa-angle-right
           %li
-            = link_to 'logout_user_path', class: "mypage-nav-list__item" do
+            = link_to logout_user_path, class: "mypage-nav-list__item" do
               ログアウト
               %i.fas.fa-angle-right

@@ -1,0 +1,74 @@
+@mixin border-left-new {
+  position: absolute;
+  bottom:5px;
+  display: block;
+  content: '';
+  height: 2px;
+  background: #ea352d;
+  width: 100%;
+  left: 55%;
+}
+@mixin border-right-new {
+  position: absolute;
+  bottom:5px;
+  display: block;
+  content: '';
+  height: 2px;
+  background: #ea352d;
+  width: 100%;
+  right: 50%;
+}
+
+#create-header {
+  .wrapper{
+    display: inline-block;
+    h1 {
+      float: left;
+    }
+    .progress-bar.signup-bar {
+      margin-left: 70px;
+      float: left;
+      li {
+        color: #888;
+        font-weight: 600;
+        margin: 8px 40px 0 0;
+        font-size: 12px;
+        float: left;
+        position: relative;
+        &.active{
+
+          color: #ea352d;
+        }
+        .progress-status {
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          background: #ccc;
+          border-radius: 50%;
+          font-weight: 600;
+          &.active{
+            background: #ea352d;
+          }
+        }
+         .member:before {
+          @include border-left-new;
+         }
+         .adress:before {
+          @include border-left-new;
+         }
+         .cash:before {
+          @include border-left-new;
+         }
+         .ok:after {
+          @include border-right-new;
+         }
+         .adress:after {
+          @include border-right-new;
+         }
+         .cash:after {
+          @include border-right-new;
+         }
+      }
+    }
+  }
+}

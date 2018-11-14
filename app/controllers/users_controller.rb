@@ -3,7 +3,7 @@ layout "mypages", only: [:identification]
 before_action :set_user
 
   def show
-
+    @address = @user.address
   end
 
   def logout
@@ -11,16 +11,20 @@ before_action :set_user
 
   def profile
   end
-  
+
   def identification
   end
 
   def update
-    if  @user.id == current_user.id
-      @user.update(user_params)
-        redirect_to profile_user_path, notice: '変更出来ました'
+    if @user.id == current_user.id
+      if @user.update(user_params)
+      flash[:notice] = '変更しました'
+      render :profile
+      else
+        render :profile
+      end
     else
-      redirect_to root_path
+      redirect_to :profile
     end
   end
 
