@@ -16,46 +16,46 @@
                   = f.label :お名前
                   %span.form-repuire 必須
                   %br/
-                  = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例) 山田"
-                  = f.text_field :first_name, autocomplete: "first_name", placeholder: "例) 太郎"
+                  = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例) 山田", class: "input-default"
+                  = f.text_field :first_name, autocomplete: "first_name", placeholder: "例) 太郎", class: "input-default"
                 .form-group
                   = f.label :お名前カナ
                   %span.form-repuire 必須
                   %br/
-                  = f.text_field :family_name_kana, autocomplete: "family_name_kana", placeholder: "例) ヤマダ"
-                  = f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "例) タロウ"
+                  = f.text_field :family_name_kana, autocomplete: "family_name_kana", placeholder: "例) ヤマダ", class: "input-default"
+                  = f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "例) タロウ", class: "input-default"
                 .form-group
                   = f.label :郵便番号
                   %span.form-repuire 必須
                   %br/
-                  = f.text_field :postal_code, autocomplete: "postal_code", placeholder: "例) 123-4567"
+                  = f.text_field :postal_code, autocomplete: "postal_code", placeholder: "例) 123-4567", class: "input-default"
                 .form-group
                   = f.label :都道府県
                   %span.form-repuire 必須
                   %br/
-                  = f.select :prefecture, Address.prefectures.keys, {prompt: '選択してください'}
+                  = f.select :prefecture, Address.prefectures.keys, {prompt: '選択してください'}, class: "input-default"
                 .form-group
                   = f.label :市区町村
                   %span.form-repuire 必須
                   %br/
-                  = f.text_field :city, autocomplete: "city", placeholder: "例) 横浜市緑区"
+                  = f.text_field :city, autocomplete: "city", placeholder: "例) 横浜市緑区", class: "input-default"
                 .form-group
                   = f.label :番地
                   %span.form-repuire 必須
                   %br/
-                  = f.text_field :street_number, autocomplete: "street_number", placeholder: "例) 青山1-1-1"
+                  = f.text_field :street_number, autocomplete: "street_number", placeholder: "例) 青山1-1-1", class: "input-default"
                 .form-group
                   = f.label :建物
                   %span.form-repuire-any 任意
                   %br/
-                  = f.text_field :building, autocomplete: "building", placeholder: "例) 柳ビル103"
+                  = f.text_field :building, autocomplete: "building", placeholder: "例) 柳ビル103", class: "input-default"
                 .form-group
                   = f.label :電話
                   %span.form-repuire-any 任意
                   %br/
-                  = f.text_field :telephone, autocomplete: "telephone", placeholder: "例) 09012345678"
+                  = f.text_field :telephone, autocomplete: "telephone", placeholder: "例) 09012345678", class: "input-default"
                 .actions
-                  = f.submit "次に進む", class: "recaptcha"
+                  = f.submit "次に進む", class: "recaptcha btn-default btn-red"
         -else
 
     =render "mypages/sidebar"
