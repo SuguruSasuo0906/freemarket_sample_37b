@@ -17,9 +17,9 @@ Rails.application.routes.draw do
     end
     resources :addresses, only: [:new, :create, :edit, :update]
     resources :payments, only: [:new, :create, :edit]
-    resources :items, only: [:new, :create, :show] do
-      resources :deliveries
-      resources :deals, only: [:new]
-    end
+  end
+  resources :items, only: [:new, :create, :show] do
+    resources :deliveries
+    resources :deals, only: [:new]
   end
 end
