@@ -1,7 +1,8 @@
 =render "shared/header"
 
 %section.item-box-container
-  %h1.item-name [.kako]サン&ムーンピアス(新品.送料無料)
+  %h1.item-name
+    = @item.name
   .item-main-content.clearfix
     .item-photo
     -# 商品画像の表示は後日実装予定
@@ -9,61 +10,67 @@
       %tr
         %th 出品者
         %td
-          %a{href: "https://www.mercari.com/jp/u/387561164/"} kako=serendipity♪
+          %a{href: "#"}
+            = @item.user.nickname
           %div
             .item-user-ratings
-              %i.icon-good
+              %i.far.fa-grin
               %span 505
             .item-user-ratings
-              %i.icon-normal
+              %i.far.fa-meh
               %span 17
             .item-user-ratings
-              %i.icon-bad
+              %i.far.fa-frown
               %span 3
       %tr
         %th カテゴリー
         %td
-          %a{href: "https://www.mercari.com/jp/category/1/"}
+          %a{href: "#"}
             %div レディース
-          %a{href: "https://www.mercari.com/jp/category/20/"}
+          %a{href: "#"}
             .item-detail-table-sub-category
               %i.icon-arrow-right
               バッグ
-          %a{href: "https://www.mercari.com/jp/category/214/"}
+          %a{href: "#"}
             .item-detail-table-sub-sub-category
               %i.icon-arrow-right
               ショルダーバッグ
       %tr
         %th ブランド
         %td
-          %a{href: "https://www.mercari.com/jp/brand/539/"}
+          %a{href: "#"}
             %div
               コーチ
       %tr
         %th 商品の状態
-        %td やや傷や汚れあり
-      %tr
-        %th 配送料の負担
-        %td 送料込み(出品者負担)
-      %tr
-        %th 配送の方法
-        %td 未定
-      %tr
-        %th 配送元地域
         %td
-          %a{href: "https://www.mercari.com/jp/area/28/"} 兵庫県
-      %tr
-        %th 発送日の目安
-        %td 1~2日で発送
+          = @item.condition
+      - @delivery.each do |delivery|
+        %tr
+          %th 配送料の負担
+          %td
+            = delivery.shipping_burden
+        %tr
+          %th 配送の方法
+          %td
+            = delivery.shipping_method
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "#{delivery.origin_region}"
+        %tr
+          %th 発送日の目安
+          %td
+            = delivery.shipping_days
   .item-price-box.text-center
-    %span.item-price.bold ¥ 900
+    %span.item-price.bold
+      = number_to_currency(@item.price, unit: "¥ ", format: "%u%n")
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
-  %a.item-buy-btn{data: {client: "hidden"}, href: "https://www.mercari.com/jp/transaction/buy/m70068440240/"} 購入画面に進む
+  %a.item-buy-btn{data: {client: "hidden"}, href: "#"} 購入画面に進む
   .item-description
     %p.item-description-inner
-      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。<br>
-      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
+      = simple_format (@item.introduction)
   .item-button-container.clearfix
     .item-button-left
       %button.item-button.item-button-like{}
@@ -104,10 +111,11 @@
 
 %section.items-box-container.clearfix.items-in-user-profile
   %h2.items-box-head
-    %a{href: "https://www.mercari.com/jp/u/939569836/"} kako=serendipity♪さんのその他の出品
+    %a{href: "#"}
+      #{@item.user.nickname}さんのその他の出品
   .items-box-content.clearfix
-    - 6.times do
-      = render "shared/items-box"
+    - @user_items.each do |item|
+      = render "shared/items-box", item: item
 
 =render "shared/app-banner"
 

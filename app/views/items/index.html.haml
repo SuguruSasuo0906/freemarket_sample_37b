@@ -8,17 +8,17 @@
     %h3.text-center
       %a{href: "/jp/category/1/"} レディース 新着アイテム
     .items-box-content.clearfix
-      - 4.times do
-        = render "shared/items-box"
+      - @items.each do |item|
+        = render "shared/items-box", item: item 
     .view-all
       %a{href: "#"}
         すべての商品を見る
-  %section.items-box-container.clearfix
+  -# %section.items-box-container.clearfix
     %h3.text-center
       %a{href: "/jp/category/1/"} メンズ 新着アイテム
     .items-box-content.clearfix
-      - 4.times do
-        = render "shared/items-box"
+      - @items.each do |item|
+        = render "shared/items-box", item: item
     .view-all
       %a{href: "#"}
         すべての商品を見る
