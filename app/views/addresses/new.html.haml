@@ -8,6 +8,7 @@
           .l-single-content
             = form_for [@user, @address], url: user_addresses_path do |f|
               - @address.errors.full_messages.each do |message|
+                %li.error-message
                 = message
               .form-group.first
                 = f.label :お名前

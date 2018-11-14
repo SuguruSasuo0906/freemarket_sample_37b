@@ -25,4 +25,5 @@ class Item < ApplicationRecord
   enum deal_condition: {
     出品中:1, 取引中:2, 売却済み:3
   }
+
 end

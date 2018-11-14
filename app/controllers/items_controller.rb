@@ -3,15 +3,13 @@ class ItemsController < ApplicationController
   layout "read", only: [:show]
 
   def index
-    if user_signed_in?
-      @user = User.find(current_user.id)
-      @items = Item.limit(4).order("created_at DESC")
-    end
+    @items = Item.includes(:user).order('created_at DESC').limit(4)
   end
 
   def new
     @item = Item.new
     @item.build_delivery
+    @item.photos.build
   end
 
   def create
@@ -31,9 +29,6 @@ class ItemsController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find(params[:user_id])
-  end
 
   def item_params
     params.require(:item).permit(
@@ -46,6 +41,7 @@ class ItemsController < ApplicationController
       :size_id,
       :brand_id,
       :condition,
+      photos_attributes: [:id, :photo_url],
       delivery_attributes: [:id, :shipping_burden, :origin_region, :shipping_days, :shipping_method]
       ).merge(user_id: current_user.id)
   end

@@ -21,13 +21,17 @@ class AddressesController < ApplicationController
 
   def edit
    @address = @user.address
+
   end
 
   def update
+    @address = @user.address
     if @user.id == current_user.id
-      @address = @user.address
-      @address.update(address_params)
-      redirect_to edit_user_address_path, notice: '変更出来ました'
+       if @address.update(address_params)
+        render :edit
+      else
+        render :edit
+      end
     else
       redirect_to root_path
     end

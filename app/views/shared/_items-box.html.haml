@@ -1,7 +1,8 @@
 %section.items-box
   = link_to item_path(item.id), method: :get do
     %figure.items-box-photo
-      %img.lazyload{alt: "天然石 トパーズ ピアス", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m48559140106_1.jpg?1527727062"}/
+      -if item.photos.first.photo_url
+        = image_tag item.photos.first.photo_url, class: 'lazyload'
     .items-box-body
       %h3.items-box-name.font-2
         = item.name
