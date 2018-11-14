@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :set_user, except: [:index]
-
+  layout "read", only: [:show]
 
   def index
     if user_signed_in?
