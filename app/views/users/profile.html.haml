@@ -11,9 +11,13 @@
               %figure
                 =image_tag "member_photo.png", alt:"", height: "60", width: "60", class: "img"
               =f.text_field :nickname, class: "input-default", placeholder: "例)AYA☆セール中", value: @user.nickname
+              - if @user.errors.any?
+                .error-message
+                  %p 入力して下さい
           .l-content__setting-profile
             =f.text_area :introduction, class: "textarea-default", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",value: @user.introduction
             =f.submit "変更する", class: "button btn-default btn-red"
+
     =render "mypages/sidebar"
   =render "shared/app-banner"
   =render "shared/footer"
