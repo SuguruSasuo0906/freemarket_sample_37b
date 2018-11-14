@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :create, :show] do
     resources :photos
     resources :deliveries
-    resources :deals, only: [:new]
+    resources :deals, only: [:new, :create]
   end
   resources :users, only: [:show, :update] do
     member do
