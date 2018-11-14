@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
-  before_action :set_user, except: [:index]
+  # before_action :set_user, except: [:index]
 
 
   def index
     if user_signed_in?
       @user = User.find(current_user.id)
+      @items = Item.limit(4).order("created_at DESC")
     end
   end
 
@@ -24,6 +25,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @user_items = Item.where(user_id: @item.user_id).limit(6).order("created_at DESC")
+    @delivery = Delivery.where(item_id: @item.id)
   end
 
   private
