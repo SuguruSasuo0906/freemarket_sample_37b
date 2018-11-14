@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {
    registrations: 'users/registrations',
-   omniauth_callbacks: 'users/omniauth_callbacks'
+   omniauth_callbacks: 'users/omniauth_callbacks',
+   sessions: 'users/sessions'
   }
   devise_scope :user do
     get 'users' => 'users/registrations#index'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
-  resources :items, only: [:index, :new, :show] do
+  resources :items, only: [:new, :create, :show] do
+    resources :photos
+    resources :deliveries
     resources :deals, only: [:new]
   end
   resources :users, only: [:show, :update] do

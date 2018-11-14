@@ -1,3 +1,8 @@
-= link_to new_item_path, method: :get, class: "sell-btn" do
-  %div 出品
-  = fa_icon 'camera'
+-if user_signed_in?
+  = link_to new_item_path, class: "sell-btn" do
+    %div 出品
+    = fa_icon 'camera'
+-else
+  = link_to new_user_session_path, class: "sell-btn" do
+    %div 出品
+    = fa_icon 'camera'

@@ -11,7 +11,7 @@
 @import "modules/mypage";
 @import "modules/user";
 @import "modules/logout";
-@import "modules/adress.new";
+@import "addresses/new";
 @import "modules/payments.new";
 @import "items/show";
 @import "users/mypage.header";
@@ -27,3 +27,4 @@
 @import "payments/create";
 @import "users/identification";
 @import "modules/sidebar";
+@import "config/common";
