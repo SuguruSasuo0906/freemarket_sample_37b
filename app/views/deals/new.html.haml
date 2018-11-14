@@ -13,7 +13,7 @@
           %p.buy-price-ja.bold
             = "¥" + "#{@item.price}"
             %span.item-shipping-fee.f14.bold
-              -if @item.delivery.shipping_burden == "送料込み"
+              -if @item.delivery.shipping_burden == "送料込み(出品者負担)"
                 送料込み
               -else
                 着払い

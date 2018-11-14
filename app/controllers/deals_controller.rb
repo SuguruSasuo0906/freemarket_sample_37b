@@ -1,27 +1,22 @@
 class DealsController < ApplicationController
-
+  before_action :set_item
+  before_action :authenticate_user!
   def new
-    @item = Item.find(params[:item_id])
-    if user_signed_in?
-      if current_user.id != @item.user_id
-        if current_user.payment && current_user.address
-        Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-        @customer = Payjp::Customer.retrieve(current_user.payment.customer_id)
-        @payment = Payment.where(user_id: current_user.id)
-        else
-          flash[:alert] = "住所情報または支払い情報が登録されていません"
-          redirect_to user_path(current_user.id)
-        end
+    if current_user.id != @item.user_id
+      if current_user.payment && current_user.address
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      @customer = Payjp::Customer.retrieve(current_user.payment.customer_id)
+      @payment = Payment.where(user_id: current_user.id)
       else
+        flash[:alert] = "住所情報または支払い情報が登録されていません"
         redirect_to user_path(current_user.id)
       end
     else
-      redirect_to user_session_path
+      redirect_to user_path(current_user.id)
     end
   end
 
   def create
-    @item = Item.find(params[:item_id])
     if @item.deal_condition == "出品中"
       @item.with_lock do
         payment = Payment.where(user_id: current_user.id)
@@ -50,6 +45,11 @@ class DealsController < ApplicationController
       flash[:alert] = "売却済の商品です。"
       redirect_to user_path(current_user.id)
     end
+  end
+
+  private
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end
