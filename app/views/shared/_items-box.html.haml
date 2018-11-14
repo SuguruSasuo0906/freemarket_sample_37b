@@ -1,5 +1,5 @@
 %section.items-box
-  =link_to new_item_deal_path(item) do
+  = link_to item_path(item.id), method: :get do
     %figure.items-box-photo
       -if item.photos.first.photo_url
         = image_tag item.photos.first.photo_url, class: 'lazyload'
@@ -8,7 +8,7 @@
         = item.name
       .items-box-num.clearfix
         .items-box-price.font-5
-          = "¥" + "#{item.price}"
+          = number_to_currency(item.price, unit: "¥ ", format: "%u%n")
         .items-box-likes.font-2
           %i.icon-like-border
         %p.item-box-tax (税込)

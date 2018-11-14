@@ -8,10 +8,11 @@ alt:= create_header
         .buy-content-inner
           %h3.buy-item-image
             %img.lazyload{alt: "", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70068440240_1.jpg?1539045823"}/
-          %p.buy-item-name.bold レア！【新品未使用】エアラインキャップ カンタス航空
+          %p.buy-item-name.bold
+            = @item.name
           %form.buy-form{action: "https://www.mercari.com/jp/transaction/buy/done/m70068440240/", method: "POST", novalidate: "novalidate"}
             %p.buy-price-ja.bold
-              ¥ 3,980
+              = @item.price
               %span.item-shipping-fee.f14.bold 送料込み
             %ul.buy-accordion.not-have
               %li.accordion-parent

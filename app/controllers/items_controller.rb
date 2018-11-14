@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  # before_action :set_user, except: [:index]
+  layout "read", only: [:show]
 
   def index
     @items = Item.includes(:user).order('created_at DESC').limit(4)
@@ -21,6 +23,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @user_items = Item.where(user_id: @item.user_id).limit(6).order("created_at DESC")
+    @delivery = Delivery.where(item_id: @item.id)
   end
 
   private
