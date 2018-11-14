@@ -5,17 +5,21 @@
       #sell-container
         .sell-container-inner
           %h2.l-single-head 商品の情報を入力
-          = form_for @item, url: user_items_path(@user),class: "sell-form" do |f|
+          = form_for @item, url: items_path,class: "sell-form" do |f|
             - @item.errors.full_messages.each do |message|
               = message
             .sell-upload-box
-              %h3.sell-up-load-head 出品画像
+              %h3.sell-up-load-head
+                出品画像
+                %span.form-require 必須
               %p 最大4枚までアップロードできます
               .sell-dropbox-container.clearfix
                 .sell-upload-drop-box
-                  %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
+                  - 4.times do |i|
+                    = f.fields_for :photos do |i|
+                      = i.file_field :photo_url
                   %pre.visible-pc
-                    ドラッグアンドドロップ
+                    クリックしてファイルをアップロード
                     %br>/
             .sell-content
               .form-group
@@ -72,18 +76,18 @@
                 %ul.sell-price
                   %li.form-group
                     .clearfix
-                      = f.label :価格 ,class: "l-left"
+                      = f.label :価格 ,class: "itemTitleLabel l-left"
                       %span.form-require 必須
-                      .l-right.sell-price-input
+                      #inputPrice.l-right.sell-price-input
                         %span ¥
                         = f.text_field :price ,class: "input-default", id: "item_price", placeholder: "例）300", value: ""
                         %div
                         %li.clearfix
                           .l-left 販売手数料 (10%)
-                          .l-right -
+                          #handling_charge.l-right -
                         %li.clearfix.bold
                           .l-left 販売利益
-                          .l-right -
+                          #profitFee.l-right -
                     .sell-content.sell-btn-box
                       %div
                         %p
