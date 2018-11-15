@@ -9,16 +9,21 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
-  resources :items, only: [:new, :create, :show] do
+  resources :items, only: [:new, :create, :show, :destroy] do
+    member do
+      get 'sellshow'
+    end
     resources :photos
     resources :deliveries
     resources :deals, only: [:new]
+
   end
   resources :users, only: [:show, :update] do
     member do
       get 'logout'
       get 'profile'
       get 'identification'
+      get 'sell'
     end
     resources :addresses, only: [:new, :create, :edit, :update]
     resources :payments, only: [:new, :create, :edit]

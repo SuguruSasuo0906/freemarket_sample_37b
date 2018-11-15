@@ -15,6 +15,10 @@ before_action :set_user
   def identification
   end
 
+  def sell
+    @items = Item.where(user_id: current_user.id)
+  end
+
   def update
     if @user.id == current_user.id
       if @user.update(user_params)
@@ -24,7 +28,7 @@ before_action :set_user
         render :profile
       end
     else
-      redirect_to :profile
+      redirect_to :profile_user_path
     end
   end
 

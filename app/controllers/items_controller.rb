@@ -23,6 +23,18 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def sellshow
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id
+      item.destroy
+      redirect_to user_path(current_user.id)
+    end
+  end
+
   private
 
   def item_params

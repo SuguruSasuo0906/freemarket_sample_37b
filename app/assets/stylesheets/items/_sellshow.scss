@@ -1,0 +1,327 @@
+body {
+  background: #f5f5f5;
+}
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.item-box-container-sellshow {
+  box-sizing: border-box;
+  margin: 40px auto 0;
+  padding: 24px 40px 40px;
+  width: 700px;
+  background: #fff;
+  a {
+    text-decoration: none;
+    color: #0099e8;
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+  }
+  th, td {
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1em;
+  }
+  .item-user-ratings {
+    display: inline-block;
+    margin: 8px 0 0 8px;
+    &:first-child {
+      margin: 0;
+    }
+    i {
+      font-size: 16px;
+      vertical-align: middle;
+    }
+    span {
+      vertical-align: middle;
+    }
+  }
+  .text-center {
+    text-align: center;
+  }
+  .item-name {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .item-main-content {
+    margin: 16px 0 0;
+    height: 375px;
+    overflow: scroll;
+  }
+  .item-price-box {
+    margin: 24px 0 0;
+    .item-price {
+      margin: 0 16px 0 0;
+      font-size: 50px;
+      font-weight: bold;
+      color: #333;
+    }
+    .item-tax {
+      font-size: 10px;
+    }
+    .item-shipping-fee {
+      display: inline-block;
+      font-size: 16px;
+    }
+  }
+  .item-photo {
+    background: #ddd;
+    float: left;
+    min-width: 300px;
+    max-width: 300px;
+    height: 375px;
+  }
+  .item-photo-wrapper{
+    display: inline-block;
+    margin:300px 0;
+    img{
+      height: 70px;
+      width: 70px;
+    }
+  }
+  .item-detail-table {
+    box-sizing: border-box;
+    float: right;
+    max-width: 300px;
+    max-height: 375px;
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #f5f5f5;
+    th {
+      border: 1px solid #f5f5f5;
+      padding: 8px;
+      width: 39%;
+      text-align: left;
+      vertical-align: middle;
+      font-weight: 400;
+      background: #fafafa;
+    }
+    td {
+      border-collapse: collapse;
+      border: 1px solid #f5f5f5;
+      padding: 12px 8px;
+      width: 61%;
+      background: #fff;
+    }
+    .icon-arrow-right:before {
+      font-size: .9em;
+    }
+  }
+  .item-price-box {
+    margin: 24px 0 0;
+    widdth: 620px;
+    height: 50px;
+  }
+  .item-price {
+    margin: 0 16px 0 0;
+    font-size: 50px;
+  }
+  .item-buy-btn {
+    display: block;
+    margin: 16px 0 24px;
+    background: #ea352d;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    transition: all ease-out .3s;
+    height: 60px;
+    line-height: 60px;
+    width: 620px;
+    font-size: 24px;
+  }
+  .item-description {
+    padding: 32px 0 0;
+    line-height: 1.5;
+    font-size: 18px;
+  }
+  .item-button-left {
+    float: left;
+  }
+  .item-button-container{
+    margin: 16px 0 0;
+    font-size: 0;
+    a:hover {
+     opacity: 0.7;
+    }
+  }
+  .item-button{
+    font-size: 14px;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 40px;
+    transition: all ease-out .3s;
+    color: #333;
+    border: 1px solid #f5f5f5;
+    background: #f5f5f5;
+  }
+  .item-button-report {
+    margin: 0 0 0 16px;
+  }
+  .item-button-right {
+    margin: 8px 0 0;
+    float: right;
+    font-size: 14px;
+  }
+}
+
+.item-detail-message-sellshow {
+  margin: 8px auto;
+  .message-content {
+    margin:  auto;
+    box-sizing: border-box;
+    padding: 24px;
+    width: 700px;
+    background: #fff;
+  }
+  .message-form p {
+    margin: 0;
+    padding: 8px;
+    font-size: 14px;
+    background: #fff6de;
+  }
+  form .textarea-default {
+    box-sizing: border-box;
+    margin: 8px 0 0;
+  }
+  .textarea-default {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 104px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .message-submit {
+    width: 100%;
+    margin: 8px 0 0;
+    font-size: 0;
+    text-align: center;
+  }
+  .btn-gray {
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+  }
+  .btn-default {
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .nav-item-link-prev-next {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 24px auto 0;
+    width: 700px;
+    font-size: 14px;
+    a {
+      text-decoration: none;
+      color: #0099e8;
+      &:hover {
+        text-decoration: underline;
+        opacity: 0.7;
+      }
+    }
+    .nav-item-link-prev{
+      width: 45%;
+      float: left;
+      padding: 0 0 0 14px;
+      text-align: left;
+    }
+    .nav-item-link-next {
+      width: 45%;
+      float: right;
+      padding: 0 14px 0 0;
+      text-align: right;
+    }
+    .icon-arrow-left:before {
+      content: '\03c';
+    }
+    .icon-arrow-right:before {
+      content: '\03e';
+    }
+  }
+}
+.listing-item-change-box-sellshow {
+    background: #fff;
+    padding: 8px 16px 8px 16px;
+    width: 665px;
+    margin: 24px auto;
+  .btn-default {
+    margin: 16px 0 16px 0;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-red {
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+  }
+  .btn-gray {
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+  }
+   p{
+    text-align: center;
+    font-size: 16px;
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.items-in-user-profile-sellshow {
+  width: 700px;
+  margin: 0 auto;
+  .items-box-head {
+    font-weight: 600;
+    margin: 24px 0 8px;
+    font-size: 22px;
+    margin: 24px 0 8px;
+    line-height: 1.4;
+  }
+  a {
+    text-decoration: none;
+    color: #0099e8;
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.7;
+    }
+  }
+  .items-box-content {
+    width: 700px;
+    .items-box {
+      float: left;
+      display: block;
+      width: 220px;
+      margin: 0 0 20px 20px;
+      vertical-align: inherit;
+      &:nth-child(3n+1){
+        margin: 0 0 20px;
+      }
+    }
+  }
+}
