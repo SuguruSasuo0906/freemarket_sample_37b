@@ -1,7 +1,6 @@
-=render "shared/header"
-
 %section.item-box-container
-  %h1.item-name [.kako]サン&ムーンピアス(新品.送料無料)
+  %h1.item-name
+    = @item.name
   .item-main-content.clearfix
     .item-photo
     -# 商品画像の表示は後日実装予定
@@ -9,75 +8,81 @@
       %tr
         %th 出品者
         %td
-          %a{href: "https://www.mercari.com/jp/u/387561164/"} kako=serendipity♪
+          = link_to "#" do
+            = @item.user.nickname
           %div
             .item-user-ratings
-              %i.icon-good
+              %i.far.fa-grin
               %span 505
             .item-user-ratings
-              %i.icon-normal
+              %i.far.fa-meh
               %span 17
             .item-user-ratings
-              %i.icon-bad
+              %i.far.fa-frown
               %span 3
       %tr
         %th カテゴリー
         %td
-          %a{href: "https://www.mercari.com/jp/category/1/"}
+          = link_to "#" do
             %div レディース
-          %a{href: "https://www.mercari.com/jp/category/20/"}
+          = link_to "#" do
             .item-detail-table-sub-category
               %i.icon-arrow-right
               バッグ
-          %a{href: "https://www.mercari.com/jp/category/214/"}
+          = link_to "#" do
             .item-detail-table-sub-sub-category
               %i.icon-arrow-right
               ショルダーバッグ
       %tr
         %th ブランド
         %td
-          %a{href: "https://www.mercari.com/jp/brand/539/"}
+          = link_to "#" do
             %div
               コーチ
       %tr
         %th 商品の状態
-        %td やや傷や汚れあり
-      %tr
-        %th 配送料の負担
-        %td 送料込み(出品者負担)
-      %tr
-        %th 配送の方法
-        %td 未定
-      %tr
-        %th 配送元地域
         %td
-          %a{href: "https://www.mercari.com/jp/area/28/"} 兵庫県
-      %tr
-        %th 発送日の目安
-        %td 1~2日で発送
+          = @item.condition
+      - @delivery.each do |delivery|
+        %tr
+          %th 配送料の負担
+          %td
+            = delivery.shipping_burden
+        %tr
+          %th 配送の方法
+          %td
+            = delivery.shipping_method
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "#{delivery.origin_region}"
+        %tr
+          %th 発送日の目安
+          %td
+            = delivery.shipping_days
   .item-price-box.text-center
-    %span.item-price.bold ¥ 900
+    %span.item-price.bold
+      = number_to_currency(@item.price, unit: "¥ ", format: "%u%n")
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
-  %a.item-buy-btn{data: {client: "hidden"}, href: "https://www.mercari.com/jp/transaction/buy/m70068440240/"} 購入画面に進む
+  = link_to "購入画面に進む", new_item_deal_path(@item.id), class: "item-buy-btn"
   .item-description
     %p.item-description-inner
-      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。<br>
-      ＊他にも数多くの商品を出品しているので、ぜひご覧ください。
+      = simple_format (@item.introduction)
   .item-button-container.clearfix
     .item-button-left
       %button.item-button.item-button-like{}
         = fa_icon 'heart'
         %span いいね!
         %span.fade-in-down{data: {num: "like"}} 3
-      %a.item-button.item-button-report.clearfix{href: ""}
+      = link_to class: "item-button item-button-report clearfix" do
         = fa_icon 'flag'
         %span 不適切な商品の報告
       %input{name: "like_add_url", type: "hidden", value: "https://www.mercari.com/jp/like/add/m70068440240/"}/
       %input{name: "like_del_url", type: "hidden", value: "https://www.mercari.com/jp/like/delete/m70068440240/"}/
       %input{name: "__csrf_value", type: "hidden", value: "6cc9e95733d2408c56440a4ad52fcc926aa4bd4f1bfe0262c230c29ca997e8b5600ef6899c8eb7548ade172b4d9e17723906547c6146c917d05d095d330c4bbba"}/
     .item-button-right
-      %a{href: "https://www.mercari.com/jp/safe/description/", target: "_blank"}
+      = link_to "#" do
         = fa_icon 'lock'
         %span あんしん・あんぜんへの取り組み
 
@@ -94,22 +99,18 @@
 
   %ul.nav-item-link-prev-next.clearfix
     %li.nav-item-link-prev
-      %a{href: "https://item.mercari.com/jp/m99586604348/"}
+      = link_to "#" do
         %i.icon-arrow-left
         スーパーマリオ3Dランド ソフト  攻略本
     %li.nav-item-link-next
-      %a{href: "https://item.mercari.com/jp/m20130884525/"}
+      = link_to "#" do
         monsta x ウォノ トレカ
         %i.icon-arrow-right
 
 %section.items-box-container.clearfix.items-in-user-profile
   %h2.items-box-head
-    %a{href: "https://www.mercari.com/jp/u/939569836/"} kako=serendipity♪さんのその他の出品
+    = link_to "#" do
+      #{@item.user.nickname}さんのその他の出品
   .items-box-content.clearfix
-    - 6.times do
-      = render "shared/items-box"
-
-=render "shared/app-banner"
-
-=render "shared/footer"
-=render "shared/sell-btn"
+    - @user_items.each do |item|
+      = render "shared/items-box", item: item

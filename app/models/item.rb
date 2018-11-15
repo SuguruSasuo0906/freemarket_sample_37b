@@ -19,7 +19,7 @@ class Item < ApplicationRecord
   validates :user_id, presence: true
 
   enum condition: {
-    "新品、未使用" => 1, 未使用に近い:2, 目立った傷や汚れなし:3, やや傷や汚れあり:4, 傷や汚れあり:5, 全体的に状態が悪い:6
+     "新品、未使用" => 1, 未使用に近い:2, 目立った傷や汚れなし:3, やや傷や汚れあり:4, 傷や汚れあり:5, 全体的に状態が悪い:6
   }
   enum deal_condition: {
     出品中:1, 取引中:2, 売却済み:3

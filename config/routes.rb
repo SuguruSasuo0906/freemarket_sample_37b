@@ -15,8 +15,7 @@ Rails.application.routes.draw do
     end
     resources :photos
     resources :deliveries
-    resources :deals, only: [:new]
-
+    resources :deals, only: [:new, :create]
   end
   resources :users, only: [:show, :update] do
     member do
