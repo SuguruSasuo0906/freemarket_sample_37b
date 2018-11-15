@@ -1,0 +1,39 @@
+= render "shared/header"
+%main.l-container
+  #l-content-sell
+    %section.mypage-tab-container
+      %h2.mypage-tab-head
+        出品した商品
+      %ul.tabs.clearfix
+        %li.active
+          %h3
+            =link_to "出品中"
+        %li
+          %h3
+            取引中
+        %li
+          %h3
+            売却済み
+      .tab
+        %ul#mypage-tab-transaction-now
+          - @items.each do |item|
+            %li
+              = link_to sellshow_item_path(item), class: "mypage-item-link" do
+                .figure-sell
+                  = image_tag item.photos.first.photo_url
+                .mypage-body
+                  .textarea
+                    = item.name
+                  .sell-condition
+                    %span.listing-item-count
+                      %i.icon-like-border
+                      %span
+                    %span.listing-item-count
+                      %i.icon-message
+                      %span
+                    .mypage-item-status.bold.awaiting
+                      出品中
+
+  =render"mypages/sidebar"
+= render "shared/app-banner"
+= render "shared/footer"

@@ -1,4 +1,68 @@
-%body
-  =render "shared/header"
-  =render "shared/mypage"
-  =render "shared/footer"
+=render "shared/header"
+%main.l-container
+  / ここから右側
+  .l-content
+    %section.mypage-user-icon
+      %link_to.img{href: ""}
+        %figure
+          =image_tag "member_photo.png", alt:"", height: "60", width: "60"
+        %h2.bold
+          =@user.nickname
+        .mypage-number
+          %div
+            評価
+            %span.bold 0
+          %div
+            出品数
+            %span.bold 0
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            %a{"data-toggle" => "tab", href: "#mypage-tab-notification"}
+              お知らせ
+        %li.sub
+          %h3
+            %a{"data-toggle" => "tab", href: "#mypage-tab-todo"}
+              やることリスト
+      .tab-content
+        %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+          %li
+            %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/point/"}
+              %figure
+                =image_tag "mercari_profile.png" , alt: ""
+              .mypage-item-body
+                .mypage-item-text 有効期限が近づいているポイントがあります
+                %time
+                  %i.icon-time
+                  %span 2 時間前
+              %i.fas.fa-angle-right
+
+          %li.mypage-go-list
+            %a{href: "/jp/mypage/notification/"} 一覧を見る
+        / %ul#mypage-tab-todo.mypage-item-list.tab-pane
+        /   %li.mypage-item-not-found.bold 現在、やることリストはありません
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 購入した商品
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            %a{"data-toggle" => "tab", href: "#mypage-tab-transaction-now"}
+              取引中
+        %li.sub
+          %h3
+            %a{"data-toggle" => "tab", href: "#mypage-tab-transaction-old"}
+              過去の取引
+      .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item-not-found.bold 取引中の商品がありません
+        / %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+        /   %li.mypage-item-not-found.bold 過去に取引した商品がありません
+
+  / ここまで右側
+  / ここから左側
+  =render "mypages/sidebar"
+  / ここまで左側
+
+=render "shared/footer"
+=render "shared/sell-btn"

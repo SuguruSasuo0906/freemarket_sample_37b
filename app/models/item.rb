@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to :brand, optional: true
   has_one :delivery, dependent: :destroy
   accepts_nested_attributes_for :delivery
-  has_one :deal, dependent: :destroy
+  # has_one :deal, dependent: :destroy
 
   validates :name, presence: true,length: { maximum: 40 }
   validates :introduction, length: { maximum: 1000 } ,presence: true
