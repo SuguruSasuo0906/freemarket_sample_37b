@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   layout "read", only: [:show]
 
   def index
-    @items = Item.includes(:user).order('created_at DESC').limit(4)
+    @items = Item.includes(:user).where(deal_condition: 1).order('created_at DESC').limit(4)
   end
 
   def new
