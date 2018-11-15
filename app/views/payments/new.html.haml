@@ -1,11 +1,9 @@
 %script{async: "async", defer: "defer", src: "https://www.google.com/recaptcha/api.js"}
 
-= form_tag user_payments_path(@user) do
-  %script.payjp-button{"data-key" => ENV['PAYJP_PUBLIC_KEY'], src: "https://checkout.pay.jp/"}
-
 %main.single-main
   %section.l-single-container
     %h2.l-single-head 支払い方法
     .l-single-inner
       .l-single-content
-        = button_to "登録する", user_payments_path, method: :post, class: "btn-default btn-red"
+        = form_tag user_payments_path(@user) do
+          %script.payjp-button{"data-key" => ENV['PAYJP_PUBLIC_KEY'], src: "https://checkout.pay.jp/","data-text" => "クレジットカード情報を登録する", "data-submit-text" => "カード情報を登録する"}
