@@ -28,6 +28,20 @@ class ItemsController < ApplicationController
     @delivery = Delivery.where(item_id: @item.id)
   end
 
+  def sellshow
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id
+      item.destroy
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def item_params
