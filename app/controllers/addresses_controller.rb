@@ -20,8 +20,11 @@ class AddressesController < ApplicationController
   end
 
   def edit
-   @address = @user.address
-
+    if @user.address
+      @address = @user.address
+    else
+      @address = Address.new(user_id: @user.id)
+    end
   end
 
   def update
