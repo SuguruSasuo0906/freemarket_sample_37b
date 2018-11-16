@@ -25,7 +25,7 @@
               .form-group
                 .g-recaptcha{"data-callback" => "validateRecaptcha", "data-sitekey" => "6LcXI3cUAAAAAFqqhr2QMLzDjCPYz3KWuQeZoh5L"}
               .login-submit
-                = f.submit "ログイン", class: "btn-red recaptcha", disabled: "disabled"
+                = f.submit "ログイン", class: " btn-default btn-red recaptcha", disabled: "disabled"
                 %a
               - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
                 .pass

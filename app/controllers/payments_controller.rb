@@ -21,6 +21,11 @@ class PaymentsController < ApplicationController
   end
 
   def edit
+    if @user.payment
+      @payment = @user.payment
+    else
+      @payment = Payment.new(user_id: @user.id)
+    end
   end
 
   private

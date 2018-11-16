@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-layout "mypages", only: [:identification]
+layout "read", only: [:identification, :logout]
 before_action :set_user
 
   def show

@@ -2,9 +2,13 @@
   overflow: hidden;
   margin: 40px auto 0;
   padding: 0 0 40px;
+  @media screen and (min-width: 1068px){
+    .l-content {
+        float: right;
+    }
+  }
   .l-content{
     width: 700px;
-    float:right;
     .mypage-user-icon {
        background: url(user-bg.jpg);
        text-align: center;
