@@ -82,7 +82,7 @@
               住所変更
               %i.fas.fa-angle-right
           %li
-            = link_to '/users/1/payments/1/edit', class: 'mypage-nav-list__item' do
+            = link_to edit_user_payment_path(@user), class: 'mypage-nav-list__item' do
               支払い方法
               %i.fas.fa-angle-right
           %li
@@ -90,7 +90,7 @@
               メール/パスワード
               %i.fas.fa-angle-right
           %li
-            = link_to '/users/1/identification/', class: 'mypage-nav-list__item' do
+            = link_to identification_user_path(@user), class: 'mypage-nav-list__item' do
               本人情報
               %i.fas.fa-angle-right
           %li
