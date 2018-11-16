@@ -15,9 +15,7 @@ class PaymentsController < ApplicationController
     )
     @payment = Payment.new(customer_id: customer.id, user_id: current_user.id)
 
-    if @payment.save
-      redirect_to root_path
-    else
+    unless @payment.save
       render 'new'
     end
   end
