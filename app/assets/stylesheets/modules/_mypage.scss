@@ -79,13 +79,11 @@
           font-size: 20px;
           position: absolute;
           right: 19px;
+          top:40px;
           color: #ccc;
-          -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-          -webkit-transition: all ease-out .2s;
-          transition: all ease-out .2s;}
+         }
           .mypage-item-body {
-            margin: 0 40px 0 68px;
+            margin: 0 40px 15px 68px;
           }
         figure {
           position: relative;
@@ -165,10 +163,6 @@
       top: 50%;
       right: 16px;
       color: #ccc;
-      -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-      -webkit-transition: all ease-out .2s;
-      transition: all ease-out .2s;
     }
     .mypage-nav-list-item {
       position: relative;
